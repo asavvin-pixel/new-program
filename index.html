@@ -1,0 +1,2296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Управление в индустрии гостеприимства и экономике впечатлений - Universal University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bone:#f3eee5;
+    --bone-2:#ede6d8;
+    --ink:#1a1c19;
+    --ink-soft:#2a2d28;
+    --moss:#3d4a3a;
+    --moss-deep:#2a3328;
+    --olive:#6b6a3e;
+    --bronze:#8a6a3b;
+    --bronze-light:#b08a5a;
+    --rust:#7a3a25;
+    --line:rgba(26,28,25,0.18);
+    --line-soft:rgba(26,28,25,0.10);
+    --paper:#faf6ed;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bone);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    font-weight:300;
+    font-size:16px;
+    line-height:1.55;
+    letter-spacing:0.005em;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--moss);color:var(--bone)}
+
+  /* ---------- TYPOGRAPHY ---------- */
+  .display{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:300;
+    letter-spacing:-0.015em;
+    line-height:0.98;
+  }
+  .display em{font-style:italic;  color:var(--bronze)}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    font-weight:400;
+    color:var(--moss);
+  }
+  .chapter-mark{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--bronze);
+  }
+  .lead{
+    font-family:'Manrope', sans-serif;
+    font-weight:400;
+    font-size:clamp(17px, 1.3vw, 21px);
+    line-height:1.5;
+    letter-spacing:0;
+    color:var(--ink-soft);
+  }
+  .lead em{font-style:italic;color:var(--bronze)}
+
+  /* ---------- LAYOUT ---------- */
+  section{
+    position:relative;
+    padding:120px 6vw;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .section-header{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:40px;
+    margin-bottom:80px;
+    align-items:start;
+  }
+  .section-header .num{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:54px;
+    color:var(--bronze);
+    line-height:1;
+  }
+  .section-header h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size:clamp(38px, 4.5vw, 64px);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+    max-width:18ch;
+  }
+  .section-header h2 em{font-style:italic;  color:var(--moss)}
+  @media (max-width:768px){
+    .section-header{grid-template-columns:1fr; gap:20px}
+    .section-header .num{font-size:36px}
+    section{padding:80px 24px}
+  }
+
+  /* ---------- NAV ---------- */
+  .topnav{
+    position:fixed; top:0; left:0; right:0;
+    z-index:100;
+    padding:14px 4vw;
+    display:flex; justify-content:space-between; align-items:center;
+    background:rgba(243,238,229,0.85);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .uu-logo{
+    font-family:'Manrope', sans-serif;
+    font-weight:700;
+    font-size:14px;
+    line-height:1;
+    letter-spacing:0.02em;
+    color:var(--ink);
+    text-transform:uppercase;
+    display:block;
+  }
+  .uu-logo .row{display:block}
+  .topnav .meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--moss);
+    display:flex; gap:24px;
+  }
+  @media(max-width:768px){.topnav .meta span:first-child{display:none}}
+
+  /* ---------- INDUSTRY (PROLOGUE) ---------- */
+  .industry-section{
+    background:var(--paper);
+  }
+  .industry-section .section-header .num{
+    color:var(--moss);
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:54px;
+    line-height:1;
+  }
+  .industry-lead{margin-bottom:80px}
+  .market-stats{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-bottom:80px;
+  }
+  @media(max-width:900px){.market-stats{grid-template-columns:1fr 1fr}}
+  @media(max-width:500px){.market-stats{grid-template-columns:1fr}}
+  .market-stats > div{
+    background:var(--paper);
+    padding:36px 28px;
+  }
+  .market-stats .ms-num{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:400;
+    font-size:64px;
+    line-height:0.95;
+    color:var(--moss);
+    letter-spacing:-0.01em;
+  }
+  .market-stats .ms-num span{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:24px;
+    color:var(--bronze);
+    letter-spacing:0;
+    margin-left:8px;
+  }
+  .market-stats .ms-lbl{
+    margin-top:18px;
+    font-size:13.5px;
+    line-height:1.45;
+    color:var(--ink-soft);
+  }
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:48px;
+  }
+  @media(max-width:900px){.why-grid{grid-template-columns:1fr; gap:32px}}
+  .why-grid > div p{
+    font-size:15px;
+    line-height:1.55;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    padding:0 6vw;
+    display:flex; flex-direction:column;
+    justify-content:space-between;
+    position:relative;
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(176,138,90,0.12), transparent 50%),
+      radial-gradient(ellipse at 10% 80%, rgba(61,74,58,0.15), transparent 55%),
+      var(--bone);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0 39px, rgba(26,28,25,0.025) 39px 40px);
+    pointer-events:none;
+  }
+  .hero-top{
+    padding-top:140px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:end;
+  }
+  .hero-top .right{
+    text-align:right;
+    padding-bottom:8px;
+  }
+  .hero-title{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    font-size:clamp(60px, 10vw, 168px);
+    line-height:0.88;
+    letter-spacing:-0.025em;
+    margin:60px 0 40px;
+    position:relative;
+    z-index:2;
+  }
+  .hero-title .line1{display:block}
+  .hero-title .line2{display:block; padding-left:18vw; font-style:italic; color:var(--moss)}
+  .hero-title .line3{display:block; padding-left:6vw}
+  .hero-title .line4{display:block; padding-left:14vw; color:var(--bronze); font-style:italic}
+  @media(max-width:768px){
+    .hero-title .line2,.hero-title .line3,.hero-title .line4{padding-left:0}
+    .hero-top{grid-template-columns:1fr}
+    .hero-top .right{text-align:left}
+  }
+  .hero-bottom{
+    padding-bottom:60px;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:60px;
+    align-items:end;
+    position:relative; z-index:2;
+  }
+  @media(max-width:768px){.hero-bottom{grid-template-columns:1fr;gap:30px}}
+  .hero-bottom .desc{
+    font-family:'Manrope', sans-serif;
+    font-weight:400;
+    font-size:clamp(20px, 1.6vw, 24px);
+    line-height:1.4;
+    color:var(--ink-soft);
+    max-width:34ch;
+  }
+  .hero-bottom .desc em{font-style:italic; color:var(--bronze); }
+  .hero-bottom .stamp{
+    border:1px solid var(--line);
+    padding:24px 28px;
+    background:rgba(250,246,237,0.5);
+  }
+  .hero-bottom .stamp .row{
+    display:flex; justify-content:space-between;
+    padding:8px 0;
+    border-bottom:1px solid var(--line-soft);
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .hero-bottom .stamp .row:last-child{border-bottom:none}
+  .hero-bottom .stamp .row b{font-weight:400; color:var(--moss)}
+
+  /* ---------- ORNAMENT ---------- */
+  .ornament{
+    display:flex; align-items:center; gap:18px;
+    color:var(--bronze);
+    margin:60px 0;
+  }
+  .ornament .line{flex:1; height:1px; background:var(--bronze); opacity:0.4}
+  .ornament .dot{
+    width:6px; height:6px;
+    border:1px solid var(--bronze);
+    transform:rotate(45deg);
+  }
+
+  /* ---------- CHAPTER I - GAP ---------- */
+  .gap-grid{
+    display:grid;
+    grid-template-columns:repeat(12, 1fr);
+    gap:32px 40px;
+  }
+  .gap-grid .quote{
+    grid-column:1 / span 7;
+    font-family:'JetBrains Mono', monospace;
+    font-size:clamp(28px, 3vw, 44px);
+    font-weight:300;
+    line-height:1.18;
+    letter-spacing:-0.01em;
+  }
+  .gap-grid .quote em{font-style:italic;color:var(--moss)}
+  .gap-grid .side{
+    grid-column:9 / span 4;
+    border-left:1px solid var(--line);
+    padding-left:32px;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .gap-grid .side p+p{margin-top:14px}
+
+  .gap-numbers{
+    display:grid; grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    margin-top:80px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .gap-numbers > div{
+    background:var(--bone);
+    padding:32px 24px;
+  }
+  .gap-numbers .n{
+    font-family:'JetBrains Mono', monospace;
+    font-size:64px;
+    line-height:1;
+    color:var(--moss);
+    font-weight:400;
+  }
+  .gap-numbers .n em{font-style:italic;font-size:32px;color:var(--bronze)}
+  .gap-numbers .lbl{
+    margin-top:14px;
+    font-size:13px;
+    color:var(--ink-soft);
+    line-height:1.4;
+  }
+  @media(max-width:768px){
+    .gap-grid .quote, .gap-grid .side{grid-column:1/-1}
+    .gap-grid .side{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:24px}
+    .gap-numbers{grid-template-columns:1fr 1fr}
+  }
+
+  /* ---------- DEMAND ---------- */
+  .demand-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+  }
+  @media(max-width:768px){.demand-cols{grid-template-columns:1fr}}
+  .persona{
+    border:1px solid var(--line);
+    padding:36px;
+    background:var(--paper);
+  }
+  .persona h4{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:28px;
+    font-weight:400;
+    margin-bottom:8px;
+    color:var(--moss);
+  }
+  .persona .who{font-size:13px;color:var(--bronze);font-family:'JetBrains Mono',monospace;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:24px}
+  .persona ul{list-style:none}
+  .persona li{
+    padding:14px 0;
+    border-top:1px solid var(--line-soft);
+    font-size:15px;
+    display:flex;
+    gap:14px;
+  }
+  .persona li::before{
+    content:'·';
+    color:var(--bronze);
+    font-size:24px;
+    line-height:1;
+  }
+  .demand-evidence{
+    margin-top:80px;
+    padding-top:60px;
+    border-top:1px solid var(--line);
+  }
+  .evidence-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+    margin-top:40px;
+  }
+  @media(max-width:768px){.evidence-grid{grid-template-columns:1fr}}
+  .evidence-card .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    margin-bottom:18px;
+    padding-bottom:18px;
+    border-bottom:1px solid var(--line);
+  }
+  .evidence-card h5{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-weight:400;
+    font-size:22px;
+    margin-bottom:10px;
+  }
+  .evidence-card p{font-size:14px; color:var(--ink-soft)}
+
+  /* ---------- BENCHMARK TABLE ---------- */
+  .bench{
+    overflow-x:auto;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .bench table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:760px;
+  }
+  .bench th, .bench td{
+    text-align:left;
+    padding:22px 18px;
+    border-bottom:1px solid var(--line-soft);
+    vertical-align:top;
+  }
+  .bench th{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    color:var(--moss);
+    font-weight:400;
+    padding-bottom:14px;
+  }
+  .bench td{font-size:14px; line-height:1.5; color:var(--ink-soft)}
+  .bench td:first-child{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:20px;
+    color:var(--ink);
+    font-weight:400;
+    width:24%;
+  }
+  .bench tr.ours td{background:var(--paper); color:var(--ink); font-weight:400}
+  .bench tr.ours td:first-child{color:var(--bronze)}
+
+  /* ---------- USP ---------- */
+  .usp{
+    background:var(--moss-deep);
+    color:var(--bone);
+    padding:140px 6vw;
+  }
+  .usp .eyebrow{color:var(--bronze-light)}
+  .usp .chapter-mark{color:var(--bronze-light)}
+  .usp h2{color:var(--bone)}
+  .usp h2 em{font-style:italic;color:var(--bronze-light)}
+  .usp .lead{color:rgba(243,238,229,0.78)}
+  .usp .lead em{font-style:italic;font-style:italic;color:var(--bronze-light)}
+  .usp-points{
+    margin-top:80px;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:0;
+    border-top:1px solid rgba(243,238,229,0.18);
+    border-left:1px solid rgba(243,238,229,0.18);
+  }
+  @media(max-width:768px){.usp-points{grid-template-columns:1fr}}
+  .usp-points > div{
+    padding:40px 36px;
+    border-right:1px solid rgba(243,238,229,0.18);
+    border-bottom:1px solid rgba(243,238,229,0.18);
+  }
+  .usp-points .num{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:42px;
+    color:var(--bronze-light);
+    margin-bottom:20px;
+    line-height:1;
+  }
+  .usp-points h4{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:400;
+    font-size:26px;
+    margin-bottom:14px;
+    line-height:1.15;
+  }
+  .usp-points p{
+    font-size:14px;
+    color:rgba(243,238,229,0.7);
+    line-height:1.55;
+  }
+
+  /* ---------- PROGRAM DESCRIPTION ---------- */
+  .program-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:start;
+  }
+  @media(max-width:768px){.program-grid{grid-template-columns:1fr; gap:40px}}
+  .careers-list{list-style:none}
+  .careers-list li{
+    padding:20px 0;
+    border-bottom:1px solid var(--line-soft);
+    display:grid;
+    grid-template-columns:40px 1fr;
+    gap:20px;
+    align-items:baseline;
+  }
+  .careers-list li .n{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--bronze);
+    letter-spacing:0.1em;
+  }
+  .careers-list li .t{
+    font-family:'JetBrains Mono', monospace;
+    font-size:22px;
+    font-weight:400;
+    line-height:1.25;
+  }
+  .careers-list li .t em{font-style:italic;color:var(--moss)}
+
+  /* ---------- PORTRAIT ---------- */
+  .portrait-cols{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:40px;
+  }
+  @media(max-width:900px){.portrait-cols{grid-template-columns:repeat(2, 1fr)}}
+  @media(max-width:500px){.portrait-cols{grid-template-columns:1fr}}
+  .portrait-cols > div h5{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    margin-bottom:24px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .portrait-cols > div p, .portrait-cols > div li{
+    font-size:14.5px;
+    line-height:1.55;
+    color:var(--ink-soft);
+  }
+  .portrait-cols > div ul{list-style:none}
+  .portrait-cols > div li{padding:8px 0}
+  .portrait-cols > div li::before{content:'- '; color:var(--bronze)}
+
+  /* ---------- COMPETENCIES ---------- */
+  .comp-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  @media(max-width:900px){.comp-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:500px){.comp-grid{grid-template-columns:1fr}}
+  .comp-grid > div{
+    background:var(--bone);
+    padding:32px 28px;
+  }
+  .comp-grid .ic{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    line-height:1;
+    margin-bottom:14px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .comp-grid h5{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:400;
+    font-size:24px;
+    margin-bottom:16px;
+    line-height:1.1;
+    letter-spacing:-0.005em;
+  }
+  .comp-grid h5 em{font-style:italic; color:var(--moss)}
+  .comp-grid ul{list-style:none; font-size:13.5px}
+  .comp-grid li{padding:6px 0; color:var(--ink-soft); line-height:1.45}
+  .comp-grid li::before{content:'·  '; color:var(--bronze)}
+
+  /* ---------- CET FRAME ---------- */
+  .cet-frame{
+    background:var(--moss-deep);
+    color:var(--bone);
+    padding:40px 36px;
+    margin-bottom:48px;
+  }
+  .cet-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--bronze-light);
+    margin-bottom:32px;
+  }
+  .cet-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:40px;
+  }
+  @media(max-width:900px){.cet-grid{grid-template-columns:1fr; gap:32px}}
+  .cet-letter{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:120px;
+    line-height:0.85;
+    color:var(--bronze-light);
+    letter-spacing:-0.02em;
+  }
+  .cet-name{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--bone);
+    margin:18px 0 14px;
+  }
+  .cet-grid p{
+    font-size:14px;
+    line-height:1.55;
+    color:rgba(243,238,229,0.78);
+  }
+
+  /* ---------- 8 SEMESTERS ---------- */
+  .semesters{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  @media(max-width:900px){.semesters{grid-template-columns:1fr 1fr}}
+  @media(max-width:500px){.semesters{grid-template-columns:1fr}}
+  .sem{
+    background:var(--bone);
+    padding:32px 26px;
+    position:relative;
+    min-height:340px;
+  }
+  .sem.year-2{background:#efe8d8}
+  .sem.year-3{background:#e8e0cd}
+  .sem.year-4{background:var(--moss-deep); color:var(--bone)}
+  .sem.year-4 .sem-num, .sem.year-4 .sem-title{color:var(--bronze-light)}
+  .sem.year-4 li{color:rgba(243,238,229,0.78); border-color:rgba(243,238,229,0.15)}
+  .sem.year-4 .tag{background:rgba(243,238,229,0.12); color:var(--bone)}
+  .sem-num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.2em;
+    color:var(--bronze);
+    margin-bottom:8px;
+  }
+  .sem-title{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:24px;
+    color:var(--moss);
+    margin-bottom:20px;
+    line-height:1.15;
+  }
+  .sem ul{list-style:none; font-size:13.5px}
+  .sem li{
+    padding:8px 0;
+    border-top:1px solid var(--line-soft);
+    color:var(--ink-soft);
+    line-height:1.4;
+  }
+  .sem .tag{
+    display:inline-block;
+    margin-top:18px;
+    padding:5px 10px;
+    background:var(--bronze);
+    color:var(--bone);
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+  }
+
+  /* ---------- COURSES ---------- */
+  .course{
+    border-top:1px solid var(--line);
+    padding:36px 0;
+    display:grid;
+    grid-template-columns:200px 1fr 240px;
+    gap:48px;
+  }
+  @media(max-width:900px){.course{grid-template-columns:1fr; gap:18px}}
+  .course:last-child{border-bottom:1px solid var(--line)}
+  .course .meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.15em;
+    color:var(--moss);
+  }
+  .course .meta .code{color:var(--bronze); margin-bottom:8px;}
+  .course .main h4{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:400;
+    font-size:30px;
+    line-height:1.1;
+    margin-bottom:14px;
+  }
+  .course .main h4 em{font-style:italic;  color:var(--moss)}
+  .course .main p{font-size:15px; color:var(--ink-soft); margin-bottom:14px}
+  .course .main .outcomes{
+    font-size:13px; color:var(--ink);
+    padding-top:12px;
+    border-top:1px solid var(--line-soft);
+  }
+  .course .main .outcomes b{color:var(--bronze); font-weight:500; letter-spacing:0.05em; font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; display:block; margin-bottom:6px}
+  .course .side{
+    font-size:13px; color:var(--ink-soft);
+    padding-left:24px;
+    border-left:1px solid var(--line);
+  }
+  @media(max-width:900px){.course .side{padding-left:0; border-left:none; border-top:1px solid var(--line-soft); padding-top:14px}}
+  .course .side b{display:block; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--bronze); margin-bottom:6px; font-weight:500}
+
+  /* ---------- PROJECTS ---------- */
+  .projects-flow{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-bottom:60px;
+  }
+  @media(max-width:900px){.projects-flow{grid-template-columns:1fr 1fr}}
+  @media(max-width:500px){.projects-flow{grid-template-columns:1fr}}
+  .pf{
+    background:var(--bone);
+    padding:32px 24px;
+  }
+  .pf .yr{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    color:var(--bronze);
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+  }
+  .pf h5{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:24px;
+    color:var(--moss);
+    margin:10px 0 14px;
+  }
+  .pf p{font-size:13.5px; color:var(--ink-soft); line-height:1.5}
+
+  .projects-types{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:60px;
+  }
+  @media(max-width:900px){.projects-types{grid-template-columns:1fr}}
+  .clients-list{list-style:none}
+  .clients-list li{
+    padding:18px 0;
+    border-bottom:1px solid var(--line-soft);
+    display:flex; justify-content:space-between;
+    gap:24px;
+  }
+  .clients-list li .l{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:22px;
+  }
+  .clients-list li .r{
+    font-size:13px; color:var(--ink-soft);
+    text-align:right;
+    max-width:50%;
+  }
+
+  /* ---------- AI ---------- */
+  .ai-section{
+    background:var(--paper);
+    border:none;
+  }
+  .ai-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+  }
+  @media(max-width:900px){.ai-grid{grid-template-columns:1fr; gap:40px}}
+  .ai-tools{
+    border:1px solid var(--line);
+    padding:32px;
+    background:var(--bone);
+  }
+  .ai-tools h5{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    margin-bottom:20px;
+  }
+  .ai-tools .row{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:24px;
+    padding:14px 0;
+    border-top:1px solid var(--line-soft);
+    font-size:14px;
+  }
+  .ai-tools .row b{
+    font-weight:500;
+    color:var(--moss);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.05em;
+  }
+
+  /* ---------- THESIS ---------- */
+  .thesis-options{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-bottom:60px;
+  }
+  @media(max-width:900px){.thesis-options{grid-template-columns:1fr 1fr}}
+  .thesis-options > div{
+    background:var(--bone);
+    padding:32px 24px;
+  }
+  .thesis-options .t{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:32px;
+    color:var(--bronze);
+    margin-bottom:14px;
+    line-height:1;
+  }
+  .thesis-options h5{
+    font-family:'JetBrains Mono', monospace;
+    font-size:22px;
+    margin-bottom:10px;
+    line-height:1.1;
+    font-weight:400;
+  }
+  .thesis-options p{font-size:13px; color:var(--ink-soft); line-height:1.5}
+
+  /* ---------- PARTNERS ---------- */
+  .partners-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+  }
+  @media(max-width:900px){.partners-grid{grid-template-columns:1fr}}
+  .partner-types{
+    list-style:none;
+  }
+  .partner-types li{
+    padding:24px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .partner-types li b{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:24px;
+    font-weight:400;
+    color:var(--moss);
+    display:block;
+    margin-bottom:8px;
+  }
+  .partner-types li span{
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .partner-exchange{
+    background:var(--moss-deep);
+    color:var(--bone);
+    padding:40px;
+  }
+  .partner-exchange h5{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:28px;
+    color:var(--bronze-light);
+    margin-bottom:24px;
+  }
+  .partner-exchange .row{
+    display:grid;
+    grid-template-columns:1fr 20px 1fr;
+    gap:20px;
+    padding:18px 0;
+    border-top:1px solid rgba(243,238,229,0.15);
+    font-size:13.5px;
+    align-items:center;
+  }
+  .partner-exchange .row b{
+    color:var(--bronze-light);
+    font-weight:400;
+  }
+  .partner-exchange .row .arr{
+    text-align:center;
+    font-family:'JetBrains Mono',monospace;
+    color:var(--bronze-light);
+  }
+
+  /* ---------- ADMISSIONS PLAN ---------- */
+  .plan-table{
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr 1fr;
+    border:1px solid var(--ink);
+    margin-bottom:40px;
+  }
+  .plan-table > div{
+    padding:18px 16px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .plan-table > div:nth-child(4n){border-right:none}
+  .plan-table .h{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    color:var(--moss);
+    background:var(--paper);
+  }
+  .plan-table .yr{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:26px;
+    color:var(--bronze);
+    line-height:1;
+  }
+  .plan-table .v{
+    font-family:'JetBrains Mono', monospace;
+    font-size:22px;
+    color:var(--ink);
+    line-height:1.1;
+  }
+  .plan-table .v small{
+    display:block;
+    font-family:'JetBrains Mono', monospace;
+    font-size:9px;
+    color:var(--ink-soft);
+    letter-spacing:0.1em;
+    margin-top:4px;
+    font-style:normal;
+  }
+  @media(max-width:600px){
+    .plan-table{grid-template-columns:1fr 1fr}
+    .plan-table > div:nth-child(4n){border-right:1px solid var(--line)}
+    .plan-table > div:nth-child(2n){border-right:none}
+  }
+  .funnel{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:60px;
+  }
+  @media(max-width:900px){.funnel{grid-template-columns:1fr 1fr}}
+  .funnel > div{
+    background:var(--bone);
+    padding:24px 18px;
+    text-align:center;
+  }
+  .funnel .step{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    color:var(--bronze);
+    letter-spacing:0.2em;
+    margin-bottom:10px;
+  }
+  .funnel .v{
+    font-family:'JetBrains Mono', monospace;
+    font-size:36px;
+    color:var(--moss);
+  }
+  .funnel .lbl{font-size:12px; color:var(--ink-soft); margin-top:6px}
+
+  /* ---------- ECONOMICS ---------- */
+  .econ-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+  }
+  @media(max-width:900px){.econ-grid{grid-template-columns:1fr}}
+  .econ-table{
+    border-top:1px solid var(--ink);
+  }
+  .econ-table .row{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    padding:14px 0;
+    border-bottom:1px solid var(--line-soft);
+    font-size:14px;
+  }
+  .econ-table .row.h{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--moss);
+  }
+  .econ-table .row .label{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:18px;
+  }
+  .econ-table .row.total{
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    background:var(--paper);
+    margin-top:8px;
+    padding:18px 0;
+  }
+  .econ-table .row.total .label{color:var(--bronze)}
+  .risks h5{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:28px;
+    color:var(--moss);
+    margin-bottom:20px;
+  }
+  .risks ul{list-style:none}
+  .risks li{
+    padding:14px 0;
+    border-top:1px solid var(--line-soft);
+    font-size:14px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  .risks li b{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-size:16px;
+    font-weight:400;
+    color:var(--rust);
+  }
+  .risks li span{color:var(--ink-soft)}
+
+  /* ---------- LAUNCH PLAN ---------- */
+  .launch-stages{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  @media(max-width:900px){.launch-stages{grid-template-columns:1fr}}
+  .launch-stages > div{
+    background:var(--bone);
+    padding:36px 28px;
+  }
+  .launch-stages .ph{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    color:var(--bronze);
+    letter-spacing:0.22em;
+    margin-bottom:8px;
+  }
+  .launch-stages h4{
+    font-family:'JetBrains Mono', monospace;
+    
+    font-weight:400;
+    font-size:30px;
+    color:var(--moss);
+    margin-bottom:24px;
+    line-height:1.1;
+  }
+  .launch-stages ul{list-style:none}
+  .launch-stages li{
+    padding:10px 0;
+    border-top:1px solid var(--line-soft);
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--bone);
+    padding:100px 6vw 40px;
+    border:none;
+  }
+  footer .top{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:60px;
+    margin-bottom:80px;
+  }
+  @media(max-width:768px){footer .top{grid-template-columns:1fr}}
+  footer h2{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:300;
+    font-size:clamp(40px, 6vw, 80px);
+    line-height:0.95;
+    letter-spacing:-0.015em;
+  }
+  footer h2 em{font-style:italic; color:var(--bronze-light); }
+  footer .right{
+    border-left:1px solid rgba(243,238,229,0.18);
+    padding-left:32px;
+  }
+  footer .right p{
+    font-size:14px;
+    color:rgba(243,238,229,0.65);
+    line-height:1.6;
+  }
+  footer .bottom{
+    border-top:1px solid rgba(243,238,229,0.18);
+    padding-top:24px;
+    display:flex; justify-content:space-between;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:rgba(243,238,229,0.5);
+  }
+  @media(max-width:600px){footer .bottom{flex-direction:column;gap:10px}}
+
+  /* ---------- ENTRANCE ANIMATIONS ---------- */
+  .reveal{
+    opacity:1;
+    transform:translateY(0);
+    transition:opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .reveal:not(.in){opacity:0; transform:translateY(20px)}
+  .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1 !important; transform:none !important}
+  }
+
+  .hero-title .line1{animation:fadeIn 1.2s 0.1s both}
+  .hero-title .line2{animation:fadeIn 1.2s 0.3s both}
+  .hero-title .line3{animation:fadeIn 1.2s 0.5s both}
+  .hero-title .line4{animation:fadeIn 1.2s 0.7s both}
+  @keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px)}
+    to{opacity:1; transform:none}
+  }
+
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="uu-logo" aria-label="Universal University">
+    <span class="row">UNIVERSAL</span>
+    <span class="row">UNIVERSITY</span>
+  </div>
+  <div class="meta">
+    <span>Бакалавриат · 4 года · очно</span>
+    <span>Москва · набор 2027</span>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-top">
+    <div class="left">
+      <div class="eyebrow">Презентация программы · набор 2027</div>
+    </div>
+    <div class="right">
+      <div class="chapter-mark">Бакалавриат · сентябрь 2027</div>
+    </div>
+  </div>
+
+  <h1 class="hero-title">
+    <span class="line1">Управление</span>
+    <span class="line2">в индустрии</span>
+    <span class="line3">гостеприимства</span>
+    <span class="line4">и впечатлений</span>
+  </h1>
+
+  <div class="hero-bottom">
+    <div class="desc">
+      Программа готовит управленцев для гостиничных, курортных, культурных и событийных проектов. Содержание выстроено вокруг трех опор: продуктовая логика, экономика проекта, работа с гостевым опытом.
+    </div>
+    <div class="stamp">
+      <div class="row"><span>Программа</span><b>Бакалавриат · 4 года</b></div>
+      <div class="row"><span>Форма</span><b>Очная, с региональными модулями</b></div>
+      <div class="row"><span>Первый набор</span><b>Сентябрь 2027</b></div>
+      <div class="row"><span>Мест в первом наборе</span><b>30</b></div>
+      <div class="row"><span>Стоимость</span><b>1 100 000 ₽ / год</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROLOGUE - INDUSTRY ANALYSIS ============ -->
+<section id="ch0" class="reveal industry-section">
+  <div class="section-header">
+    <div class="num" style="font-size:36px; color:var(--bronze);">00</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Пролог · Контекст</div>
+      <h2>Почему гостеприимство - <em>следующее направление</em> для Universal University</h2>
+    </div>
+  </div>
+
+  <div class="industry-lead">
+    <p class="lead" style="max-width:76ch; margin-bottom:0">Гостеприимство и внутренний туризм в России за последние четыре года изменились по масштабу. Внутренний турпоток приближается к 174 миллионам поездок в год, расходы туристов превысили 1,9 триллиона рублей, гостиничный фонд продолжает расширяться, появляются новые курортные кластеры и событийные площадки в регионах. Индустрия одновременно сталкивается с дефицитом управленцев, способных вести проекты как продукты, считать их экономику и удерживать гостя на повторных визитах. Universal University, объединяющий школы дизайна, архитектуры, кино, музыки и креативного предпринимательства, располагает средой и партнерской базой, в которой такая программа естественным образом дополняет существующий портфель высшего образования.</p>
+  </div>
+
+  <div class="market-stats">
+    <div>
+      <div class="ms-num">174 <span>млн</span></div>
+      <div class="ms-lbl">внутренних туристических поездок в России в 2025 году, рост 7,4% к 2024 году</div>
+    </div>
+    <div>
+      <div class="ms-num">1,94 <span>трлн ₽</span></div>
+      <div class="ms-lbl">расходы россиян на внутренний туризм в 2025 году, оценочные данные отрасли</div>
+    </div>
+    <div>
+      <div class="ms-num">82,9 <span>млн</span></div>
+      <div class="ms-lbl">проживаний в гостиницах за 11 месяцев 2025 года, рост 4,5% к 2024 году, данные Росстата</div>
+    </div>
+    <div>
+      <div class="ms-num">1,21 <span>трлн ₽</span></div>
+      <div class="ms-lbl">оборот делового туризма и MICE-сегмента в 2025 году, рост 15% к 2024 году</div>
+    </div>
+    <div>
+      <div class="ms-num">27 <span>млрд ₽</span></div>
+      <div class="ms-lbl">государственная поддержка отрасли в 2025 году по нацпроекту «Туризм и гостеприимство»</div>
+    </div>
+    <div>
+      <div class="ms-num">×2</div>
+      <div class="ms-lbl">кратность роста внутреннего туризма по числу поездок относительно 2021 года</div>
+    </div>
+  </div>
+
+  <div class="why-grid">
+    <div>
+      <div class="chapter-mark" style="margin-bottom:16px">Что происходит в индустрии</div>
+      <p>Развитие гостеприимства в России в 2024-2026 годах опирается одновременно на рост внутреннего спроса, на государственную программу поддержки отрасли и на частные инвестиции в курортную и культурно-туристическую инфраструктуру. По мере того как открываются новые объекты, индустрия упирается в нехватку специалистов, способных вести проекты целиком: от концепции и гостевого продукта до операционной модели, юнит-экономики и партнерской сети. Сегодня такие управленцы выращиваются работодателями внутри компаний за 3-5 лет, на базе выпускников программ, ориентированных на смежные специальности.</p>
+    </div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:16px">Где находится наша ниша</div>
+      <p>Сегмент управления гостевым опытом, экономикой проекта и впечатленческим продуктом не закрывается в полном объеме ни классическими бизнес-школами, ни гостиничными факультетами, ни программами туризма. У Universal University есть три ресурса для запуска такой программы: индустриальные партнерства с гостиничными группами, дестинациями и культурными институциями; преподавательский состав действующих практиков; и среда, в которой студент гостеприимства учится рядом с продюсерами, архитекторами, дизайнерами и предпринимателями, что закрывает дисциплину среды и впечатления, недоступную в профильных вузах.</p>
+    </div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:16px">Логика портфельного решения</div>
+      <p>Программа собирается на академической модели Университета CET, в которой креативность, предпринимательство и технологии работают в одной управленческой рамке. Гостеприимство - индустрия, в которой все три измерения имеют прямое коммерческое значение: гостевой опыт продается, экономика проекта проверяется на конкретной выручке, цифровые инструменты применяются в ценообразовании, аналитике и продажах. Запуск программы в сентябре 2027 года совпадает с инвестиционным циклом отрасли: первые выпускники выходят на рынок к 2031 году, когда основная волна объектов уже введена и нуждается в управленческом ядре.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER I - GAP ============ -->
+<section id="ch1" class="reveal">
+  <div class="section-header">
+    <div class="num">I.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава первая · Разрыв</div>
+      <h2>Индустрия выросла быстрее, чем подготовка людей для нее</h2>
+    </div>
+  </div>
+
+  <div class="gap-grid">
+    <div class="quote">
+      За последние три года в России кратно увеличилось число гостиниц, курортов, культурных и событийных проектов, тогда как специалистов, способных вести такой продукт от концепции до устойчивой работы с гостем, на рынке практически не сформировалось.
+    </div>
+    <div class="side">
+      <p>Классический менеджмент дает базу для управления линейными бизнесами. Гостиничные колледжи ориентированы на операционные позиции - рецепцию, обслуживание номеров, ресторан. Туристические факультеты в большинстве своем сохраняют рамку массового туризма девяностых.</p>
+      <p>Между этими тремя направлениями находится профессия, которой пока не существует в системе высшего образования: управленец, который проектирует гостевой опыт, рассматривает территорию как продукт, считает юнит-экономику впечатления и выстраивает партнерскую сеть вокруг конкретного проекта.</p>
+      <p>Спрос на такого специалиста подтверждается открытыми вакансиями и прямыми запросами индустрии. Предложение со стороны системы образования отстает на несколько лет.</p>
+    </div>
+  </div>
+
+  <div class="gap-numbers">
+    <div>
+      <div class="n">×2,4</div>
+      <div class="lbl">рост туристического потока внутри страны за 2022-2025</div>
+    </div>
+    <div>
+      <div class="n">86<em> млрд</em></div>
+      <div class="lbl">государственных инвестиций в курортную и туристическую инфраструктуру до 2030</div>
+    </div>
+    <div>
+      <div class="n">~18 000</div>
+      <div class="lbl">открытых вакансий в индустрии гостеприимства, для которых нет нужной квалификации</div>
+    </div>
+    <div>
+      <div class="n">3-4 <em>года</em></div>
+      <div class="lbl">средний срок выращивания такого специалиста внутри компании с нуля</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER II - DEMAND ============ -->
+<section id="ch2" class="reveal">
+  <div class="section-header">
+    <div class="num">II.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава вторая · Спрос</div>
+      <h2>Кто покупает <em>такое образование</em></h2>
+    </div>
+  </div>
+
+  <p class="lead" style="max-width:55ch; margin-bottom:60px">На программу ориентированы две различные группы абитуриентов, обе - с осознанной мотивацией и подтвержденной платежеспособностью. Совокупный потенциал этих сегментов превышает плановую емкость набора в 5-7 раз.</p>
+
+  <div class="demand-cols">
+    <div class="persona">
+      <div class="who">Тип A · Городские наследники</div>
+      <h4>Подростки из семей, связанных с креативными индустриями</h4>
+      <ul>
+        <li>Родители работают в креативных индустриях: предпринимательство, продюсирование, ресторанный бизнес, девелопмент. Запрос - чтобы ребенок продолжил профессиональную линию семьи в современной управленческой рамке.</li>
+        <li>У самих абитуриентов уже сложился потребительский опыт международного уровня - они путешествовали, знают премиальные отельные бренды и ищут работу с продуктом, а не вход в линейные позиции "по специальности".</li>
+        <li>Готовы оплачивать 1,1-1,5 млн рублей в год при условии, что программа на уровне упаковки, среды и состава преподавателей соответствует ожидаемому премиальному стандарту.</li>
+      </ul>
+    </div>
+
+    <div class="persona">
+      <div class="who">Тип B · Региональные амбициозные</div>
+      <h4>Сильные абитуриенты из Сочи, Калининграда, Казани, Алтая</h4>
+      <ul>
+        <li>Видят разворачивающееся развитие курортов и событийной инфраструктуры в собственных регионах и понимают, что эти проекты потребуют управленцев соответствующего уровня в ближайшие 3-5 лет.</li>
+        <li>Сознательно отказываются от поступления на местный гостиничный факультет, выбирая программу с московской средой, выходом на индустриальные связи и масштабом, недоступным в региональных вузах.</li>
+        <li>Платят 900 тысяч - 1,1 млн рублей в год, часто с привлечением ресурсов регионального семейного бизнеса или партнерских стипендий от отраслевых работодателей.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="demand-evidence">
+    <div class="chapter-mark">Чем подтверждается спрос</div>
+    <div class="evidence-grid">
+      <div class="evidence-card">
+        <div class="tag">Конкурентное поле</div>
+        <h5>Краткие программы Skillbox и Нетологии</h5>
+        <p>Набирают 200-400 человек в год при стоимости 90-150 тысяч рублей за модуль продолжительностью несколько месяцев, что подтверждает наличие массового платежеспособного интереса к теме гостеприимства при полном отсутствии полноценной программы высшего образования соответствующего качества.</p>
+      </div>
+      <div class="evidence-card">
+        <div class="tag">Открытые вакансии</div>
+        <h5>HeadHunter и LinkedIn, ключевые позиции</h5>
+        <p>Cosmos Hotel Group, Mantera, Альфа-Курорт, "Сила", ВДНХ, Сириус и сопоставимые работодатели стабильно публикуют запросы на продуктовых менеджеров и руководителей клиентского опыта со стартовой компенсацией от 180 тысяч рублей.</p>
+      </div>
+      <div class="evidence-card">
+        <div class="tag">Партнерская сеть</div>
+        <h5>Готовность индустрии участвовать</h5>
+        <p>Шесть гостиничных групп и три территориальных оператора подтвердили готовность принимать студентов на проектную работу и стажировки, а также участвовать в финансировании менторской и акселерационной составляющей программы.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER III - BENCHMARK ============ -->
+<section id="ch3" class="reveal">
+  <div class="section-header">
+    <div class="num">III.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава третья · Бенчмарк</div>
+      <h2>Что предлагают <em>сопоставимые программы</em></h2>
+    </div>
+  </div>
+
+  <div class="bench">
+    <table>
+      <thead>
+        <tr>
+          <th>Программа</th>
+          <th>Сильные стороны</th>
+          <th>Слабые стороны</th>
+          <th>Цена / формат</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Les Roches, Швейцария</td>
+          <td>Сильный международный нетворк, настоящий действующий отель в кампусе, стажировки в люксе</td>
+          <td>Подготовка ориентирована на операционные позиции в действующих гостиницах, продуктовая и предпринимательская траектория представлена слабо; кампус и образовательный контекст вне российских реалий.</td>
+          <td>≈45 000 € / год · 3,5 года</td>
+        </tr>
+        <tr>
+          <td>Glion, Швейцария</td>
+          <td>Сила бренда, операционная база, кейсы из Marriott и Accor</td>
+          <td>Менеджмент классического гостиничного формата, ограниченная глубина в темах цифровой аналитики, событийного продюсирования и развития территорий.</td>
+          <td>≈48 000 € / год · 3,5 года</td>
+        </tr>
+        <tr>
+          <td>EHL Lausanne</td>
+          <td>Академическая глубина, репутация, серьезные исследования в индустрии</td>
+          <td>Программа выдержана в традиционной отельной парадигме без отдельного фокуса на экономике впечатлений и управлении дестинациями.</td>
+          <td>≈42 000 € / год · 4 года</td>
+        </tr>
+        <tr>
+          <td>МГИМО, "Туризм и гостеприимство"</td>
+          <td>Сильная теория и языки</td>
+          <td>Ориентация на классический менеджмент, ограниченная проектная составляющая; выпускники выходят без сформированного отраслевого портфолио.</td>
+          <td>≈580 000 ₽ / год · 4 года</td>
+        </tr>
+        <tr>
+          <td>РЭУ им. Плеханова, ВШЭ "Туризм"</td>
+          <td>Доступная стоимость, бюджетные места, экономическая база ВШЭ</td>
+          <td>Клиентский опыт и экономика впечатлений не выделены в самостоятельные дисциплины, состав преподавателей преимущественно академический.</td>
+          <td>360 000 - 590 000 ₽ / год</td>
+        </tr>
+        <tr class="ours">
+          <td>Universal University</td>
+          <td>Продуктовая логика, клиентский опыт, событийная и территориальная оптика, ИИ как сквозная компетенция, индустриальные партнеры с первого года</td>
+          <td>-</td>
+          <td>1 100 000 ₽ / год · 4 года</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ CHAPTER IV - USP ============ -->
+<section id="ch4" class="usp reveal">
+  <div class="section-header" style="margin-bottom:60px">
+    <div class="num" style="color:var(--bronze-light)">IV.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава четвертая · Наша ниша</div>
+      <h2>Программа в нише, <em>которая пока не закрыта</em></h2>
+    </div>
+  </div>
+
+  <p class="lead" style="max-width:62ch">Программа выстроена вокруг управления гостевым опытом и продуктом, а не вокруг операционной работы в гостинице. Объектом проектирования выступает не сервисная роль, а целостный формат - отель, курорт, музей, фестиваль или туристическая территория - в его экономике, среде и взаимоотношениях с гостем.</p>
+
+  <div class="usp-points">
+    <div>
+      <div class="num">i.</div>
+      <h4>Продуктовая логика как основа</h4>
+      <p>Базовые единицы анализа в программе - юнит-экономика впечатления, удержание гостя и финансовый результат проекта. Операционные стандарты обслуживания изучаются, но рассматриваются как один из инструментов продуктового решения, а не как его цель.</p>
+    </div>
+    <div>
+      <div class="num">ii.</div>
+      <h4>Территория в роли продукта</h4>
+      <p>Дестинационный менеджмент занимает в программе самостоятельное место. Студенты разбирают, как регион или курортный кластер собирается в единый туристический бренд с просчитанной экономикой, конфигурацией партнеров и моделью удержания гостевого потока.</p>
+    </div>
+    <div>
+      <div class="num">iii.</div>
+      <h4>ИИ как сквозная компетенция</h4>
+      <p>Инструменты искусственного интеллекта применяются в нескольких дисциплинах: анализ отзывов, прогнозирование загрузки, динамическое ценообразование, проектирование персональных гостевых маршрутов. Отдельной дисциплины "ИИ в гостеприимстве" в программе сознательно нет.</p>
+    </div>
+    <div>
+      <div class="num">iv.</div>
+      <h4>Среда креативной школы</h4>
+      <p>Universal University собирает в одном пространстве направления продюсирования, дизайна, бренд-стратегии и предпринимательства. Студент гостеприимства оказывается внутри отраслевой экосистемы, которая отсутствует в классических вузах с профильными факультетами туризма.</p>
+    </div>
+    <div>
+      <div class="num">v.</div>
+      <h4>Региональные модули</h4>
+      <p>Алтай, Сочи, Калининград, Карелия. Каждый учебный год включает выездной модуль на 2-4 недели с разбором действующих курортных, культурных и событийных проектов непосредственно в среде их работы.</p>
+    </div>
+    <div>
+      <div class="num">vi.</div>
+      <h4>Портфолио к моменту выпуска</h4>
+      <p>За четыре года студент участвует в 6-8 проектах по брифам индустриальных заказчиков. К защите диплома сформировано портфолио, готовое к использованию при трудоустройстве или запуске собственного проекта.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER V - PROGRAMME ============ -->
+<section id="ch5" class="reveal">
+  <div class="section-header">
+    <div class="num">V.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава пятая · Программа</div>
+      <h2>Содержание программы <em>и ее логика</em></h2>
+    </div>
+  </div>
+
+  <div class="program-grid">
+    <div>
+      <p class="lead">Программа готовит управленцев продуктового типа для индустрии гостеприимства и впечатлений: специалистов, способных разработать формат от концепции до запуска, сформировать команду, выстроить отношения с партнерами, обосновать экономику проекта и обеспечить устойчивую модель работы с гостем.</p>
+      <div class="ornament">
+        <div class="line"></div><div class="dot"></div><div class="line"></div>
+      </div>
+      <p style="font-size:15px; color:var(--ink-soft); margin-bottom:16px">Содержание программы выстроено на трех опорах:</p>
+      <ul style="list-style:none; font-size:15.5px">
+        <li style="padding:14px 0; border-top:1px solid var(--line-soft)"><b style="font-family:'JetBrains Mono', monospace;  color:var(--moss); font-weight:400; font-size:18px">Академическая база</b> - экономика впечатлений, поведение потребителя, бренд-менеджмент, отраслевое право, финансы и корпоративное управление.</li>
+        <li style="padding:14px 0; border-top:1px solid var(--line-soft)"><b style="font-family:'JetBrains Mono', monospace;  color:var(--moss); font-weight:400; font-size:18px">Прикладной слой</b> - проектирование гостевого опыта, операционное управление, продакт-менеджмент, событийное продюсирование, цифровые системы аналитики и продаж.</li>
+        <li style="padding:14px 0; border-top:1px solid var(--line-soft)"><b style="font-family:'JetBrains Mono', monospace;  color:var(--moss); font-weight:400; font-size:18px">Проектная работа</b> - каждый семестр включает проект по брифу индустриального заказчика; к моменту защиты диплома у студента сформировано портфолио из 6-8 кейсов.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:20px">Карьерные треки выпускника</div>
+      <ul class="careers-list">
+        <li><span class="n">01</span><span class="t"><em>Продуктовый менеджер</em> в индустрии гостеприимства и впечатлений</span></li>
+        <li><span class="n">02</span><span class="t"><em>CX-менеджер</em> в гостиничных, курортных, культурных и событийных проектах</span></li>
+        <li><span class="n">03</span><span class="t"><em>Продюсер</em> туристических, культурных и событийных продуктов</span></li>
+        <li><span class="n">04</span><span class="t">Руководитель проектов в <em>курортном и рекреационном девелопменте</em></span></li>
+        <li><span class="n">05</span><span class="t">Менеджер по развитию <em>территориального бренда</em> и туристической дестинации</span></li>
+        <li><span class="n">06</span><span class="t">Специалист по <em>коммерческому развитию</em> и аналитике в гостиничных проектах</span></li>
+        <li><span class="n">07</span><span class="t">Менеджер <em>премиального сервиса</em> и программ лояльности</span></li>
+        <li><span class="n">08</span><span class="t"><em>Предприниматель</em> в гостеприимстве, впечатлениях и креативном туризме</span></li>
+        <li><span class="n">09</span><span class="t">Руководитель <em>культурно-туристических и событийных программ</em></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER VI - PORTRAIT ============ -->
+<section id="ch6" class="reveal">
+  <div class="section-header">
+    <div class="num">VI.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава шестая · Абитуриент</div>
+      <h2>Портрет абитуриента <em>программы</em></h2>
+    </div>
+  </div>
+
+  <div class="portrait-cols">
+    <div>
+      <h5>Мотивация</h5>
+      <p>За плечами - заметный потребительский и часто рабочий опыт в индустрии: путешествия с участием семьи в осознанном выборе гостиниц и форматов, опыт работы на событиях, в баре или ресторане, участие в семейном бизнесе. Сложилось ощущение, что классический менеджмент по содержанию слишком общий, а гостиничные колледжи не соответствуют уровню амбиций.</p>
+    </div>
+    <div>
+      <h5>Подготовка</h5>
+      <p>Сильный школьник с ЕГЭ от 75 баллов, свободным английским и часто вторым иностранным. Внешняя коммуникация на уровне взрослого: уверенно ведет себя на собеседовании, формулирует мотивацию, способен поддержать содержательный разговор о продуктах и брендах в индустрии.</p>
+    </div>
+    <div>
+      <h5>Опасения при выборе</h5>
+      <ul>
+        <li>Что программа окажется сведена к сервисным позициям и подготовке к рецепции</li>
+        <li>Что преподаватели транслируют материал десятилетней давности без обновления под текущий рынок</li>
+        <li>Что диплом не будет признаваться действующими работодателями в индустрии</li>
+        <li>Что обещанные индустриальные связи останутся на уровне презентации</li>
+      </ul>
+    </div>
+    <div>
+      <h5>Что переводит в выбор программы</h5>
+      <ul>
+        <li>Названные индустриальные партнеры с подтвержденными форматами участия</li>
+        <li>Кейсы выпускников и портфолио, доступные для просмотра до подачи документов</li>
+        <li>Качество упаковки программы и день открытых дверей, выдержанный на премиальном уровне</li>
+        <li>Региональные модули с конкретными площадками и заказчиками</li>
+        <li>Состав преподавателей: действующие практики из отелей, курортов и продюсерских центров</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER VII - COMPETENCIES ============ -->
+<section id="ch7" class="reveal">
+  <div class="section-header">
+    <div class="num">VII.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава седьмая · Компетенции</div>
+      <h2>Компетенции выпускника <em>на момент защиты</em></h2>
+    </div>
+  </div>
+
+  <p class="lead" style="max-width:66ch; margin-bottom:40px">К моменту защиты диплома выпускник имеет за плечами несколько собственных запущенных проектов, опыт ответственности за их финансовый результат и опыт управления командой реальных людей. Стартовые позиции в индустрии он занимает в качестве продуктового сотрудника с подтвержденным портфолио, а не ассистента с дипломом.</p>
+
+  <div class="cet-frame">
+    <div class="cet-label">Академическая модель CET - рамка компетенций</div>
+    <div class="cet-grid">
+      <div>
+        <div class="cet-letter">C</div>
+        <div class="cet-name">Креативность</div>
+        <p>Проектирование гостевого опыта, бренда, среды объекта, событийной и культурной программы. Содержание программы включает дисциплины по сервис-дизайну, бренд-менеджменту гостеприимства, культурному и событийному продюсированию.</p>
+      </div>
+      <div>
+        <div class="cet-letter">E</div>
+        <div class="cet-name">Предпринимательство</div>
+        <p>Юнит-экономика впечатления, финансовая модель проекта, ценообразование, оценка инвестиционной привлекательности и работа с риском. Курсы по финансам, экономике впечатлений, девелопменту курортов и предпринимательству в индустрии.</p>
+      </div>
+      <div>
+        <div class="cet-letter">T</div>
+        <div class="cet-name">Технологии</div>
+        <p>Профильные системы управления гостиницей, аналитика гостевого поведения, инструменты искусственного интеллекта, цифровые каналы продаж и коммуникаций. Сквозная компетенция, представленная в большинстве дисциплин программы.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="comp-grid">
+    <div>
+      <div class="ic">01 · Продукт</div>
+      <h5>Гостевой <em>продукт</em></h5>
+      <ul>
+        <li>Собирает гостевой путь от первого касания до повторного визита</li>
+        <li>Разрабатывает прототип туристического или событийного формата за 4-6 недель</li>
+        <li>Проверяет продуктовые гипотезы на реальных пользователях</li>
+        <li>Считает удержание гостя и пожизненную ценность клиента</li>
+      </ul>
+    </div>
+    <div>
+      <div class="ic">02 · Экономика</div>
+      <h5>Финансы <em>проекта</em></h5>
+      <ul>
+        <li>Юнит-экономика впечатления и финансовый результат объекта</li>
+        <li>Динамическое ценообразование с использованием отраслевых показателей</li>
+        <li>Финансовая модель курортного объекта на горизонте до пяти лет</li>
+        <li>Окупаемость территориального проекта и его защита перед инвестором</li>
+      </ul>
+    </div>
+    <div>
+      <div class="ic">03 · Технологии</div>
+      <h5>Цифровой <em>стек индустрии</em></h5>
+      <ul>
+        <li>Системы управления гостиницей и базами гостей на уровне внедрения</li>
+        <li>Бизнес-аналитика гостевого поведения и операционных показателей</li>
+        <li>Сегментация аудитории и персонализация маркетинговых сценариев</li>
+        <li>Автоматизация процессов через no-code и low-code инструменты</li>
+      </ul>
+    </div>
+    <div>
+      <div class="ic">04 · Управление</div>
+      <h5>Команда <em>и операционная модель</em></h5>
+      <ul>
+        <li>Управление командой из 5-15 человек с распределенными ролями</li>
+        <li>Работа с подрядчиками и партнерскими отношениями</li>
+        <li>Ведение проекта с бюджетом до 20 миллионов рублей</li>
+        <li>Управление операционными рисками и кризисными сценариями</li>
+      </ul>
+    </div>
+    <div>
+      <div class="ic">05 · ИИ</div>
+      <h5>Применение <em>искусственного интеллекта</em></h5>
+      <ul>
+        <li>Анализ массивов отзывов и репутационного поля через языковые модели</li>
+        <li>Проектирование персонализированного маршрута гостя</li>
+        <li>Прогноз загрузки и ценообразование с использованием моделей</li>
+        <li>Оценка границ применимости и точки участия человека в решении</li>
+      </ul>
+    </div>
+    <div>
+      <div class="ic">06 · Среда</div>
+      <h5>Территория <em>и сообщество</em></h5>
+      <ul>
+        <li>Регион или район как самостоятельный туристический продукт</li>
+        <li>Партнерская сеть в логике конкретной территории</li>
+        <li>Работа с локальным сообществом, культурой и идентичностью места</li>
+        <li>Стратегия развития туристической дестинации</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER VIII - SEMESTERS ============ -->
+<section id="ch8" class="reveal">
+  <div class="section-header">
+    <div class="num">VIII.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава восьмая · Структура</div>
+      <h2>Структура программы <em>на восемь семестров</em></h2>
+    </div>
+  </div>
+
+  <p class="lead" style="max-width:64ch; margin-bottom:60px">Содержание программы разделено по годам последовательно: первый год отведен на освоение устройства индустрии и поведения гостя; второй посвящен сборке продукта и базовой экономике; третий выводит студента на работу с заказчиками и территориями; четвертый предполагает выбор специализации и запуск собственного проекта.</p>
+
+  <div class="semesters">
+    <div class="sem">
+      <div class="sem-num">Сем. I · осень</div>
+      <div class="sem-title">Как устроена индустрия</div>
+      <ul>
+        <li>Введение в индустрию гостеприимства и экономику впечатлений</li>
+        <li>История гостеприимства и культурного туризма</li>
+        <li>Поведение потребителя</li>
+        <li>Базовая экономика и финансовая грамотность</li>
+        <li>Дизайн-мышление и работа с гостем</li>
+        <li>Английский для индустрии</li>
+      </ul>
+      <span class="tag">Полевой выезд</span>
+    </div>
+    <div class="sem">
+      <div class="sem-num">Сем. II · весна</div>
+      <div class="sem-title">Гость и его путь</div>
+      <ul>
+        <li>Клиентский опыт: теория и инструменты</li>
+        <li>Сегментация и портреты гостей</li>
+        <li>Сервис-дизайн</li>
+        <li>Маркетинг впечатлений</li>
+        <li>Основы операционки в отеле</li>
+        <li>Первый учебный проект - аудит гостевого пути</li>
+      </ul>
+      <span class="tag">Проект</span>
+    </div>
+    <div class="sem year-2">
+      <div class="sem-num">Сем. III · осень</div>
+      <div class="sem-title">Продукт и его деньги</div>
+      <ul>
+        <li>Продуктовый менеджмент в гостеприимстве</li>
+        <li>Юнит-экономика впечатления</li>
+        <li>PMS, CRM, channel manager</li>
+        <li>Бренд-менеджмент гостеприимства</li>
+        <li>Право и контракты в индустрии</li>
+        <li>ИИ-аналитика отзывов и пресс-поля</li>
+      </ul>
+      <span class="tag">Кейс от партнера</span>
+    </div>
+    <div class="sem year-2">
+      <div class="sem-num">Сем. IV · весна</div>
+      <div class="sem-title">События и культура</div>
+      <ul>
+        <li>Событийное продюсирование</li>
+        <li>Культурный менеджмент</li>
+        <li>Креативный туризм</li>
+        <li>Среда, пространство, атмосфера</li>
+        <li>Социальные медиа и сторителлинг бренда</li>
+        <li>Стажировка - 4 недели</li>
+      </ul>
+      <span class="tag">Стажировка</span>
+    </div>
+    <div class="sem year-3">
+      <div class="sem-num">Сем. V · осень</div>
+      <div class="sem-title">Территория как продукт</div>
+      <ul>
+        <li>Дестинационный менеджмент</li>
+        <li>Развитие туристических территорий</li>
+        <li>Девелопмент курортов и рекреации</li>
+        <li>Финансовое моделирование объекта</li>
+        <li>Динамическое ценообразование с ИИ</li>
+        <li>Региональный модуль - Алтай или Карелия</li>
+      </ul>
+      <span class="tag">Региональный модуль</span>
+    </div>
+    <div class="sem year-3">
+      <div class="sem-num">Сем. VI · весна</div>
+      <div class="sem-title">Управление и команды</div>
+      <ul>
+        <li>Лидерство и команды в гостеприимстве</li>
+        <li>Управление операционкой курортного объекта</li>
+        <li>Программы лояльности и удержание гостя</li>
+        <li>Кризис-менеджмент и репутация</li>
+        <li>Предпринимательство в гостеприимстве</li>
+        <li>Большой проект для индустриального заказчика</li>
+      </ul>
+      <span class="tag">Бриф от партнера</span>
+    </div>
+    <div class="sem year-4">
+      <div class="sem-num">Сем. VII · осень</div>
+      <div class="sem-title">Трек выбора</div>
+      <ul>
+        <li>Развилка - один из четырех треков</li>
+        <li>· Отельный и курортный менеджмент</li>
+        <li>· Событийное и культурное продюсирование</li>
+        <li>· Дестинации и территориальный девелопмент</li>
+        <li>· Предпринимательство в гостеприимстве</li>
+        <li>Глубокие курсы внутри трека + менторская поддержка</li>
+      </ul>
+      <span class="tag">Трек выбора</span>
+    </div>
+    <div class="sem year-4">
+      <div class="sem-num">Сем. VIII · весна</div>
+      <div class="sem-title">Свое</div>
+      <ul>
+        <li>Запуск собственного продукта или стартапа</li>
+        <li>Стратегия выхода на рынок и предпродажи</li>
+        <li>Питч и работа с инвестором</li>
+        <li>Защита перед советом из индустрии</li>
+        <li>Демо-день программы</li>
+        <li>Финальная упаковка портфолио</li>
+      </ul>
+      <span class="tag">Защита + Демо-день</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER IX - COURSES ============ -->
+<section id="ch9" class="reveal">
+  <div class="section-header">
+    <div class="num">IX.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава девятая · Дисциплины</div>
+      <h2>Ключевые дисциплины <em>программы</em></h2>
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="meta">
+      <div class="code">HOS-201</div>
+      <div>Сем. III · 6 ECTS</div>
+      <div style="margin-top:14px;">Индустриальный партнер</div>
+      <div style="font-size:13px; margin-top:4px; color:var(--ink); font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px">Cosmos Hotel Group</div>
+    </div>
+    <div class="main">
+      <h4>Продуктовый менеджмент <em>в индустрии гостеприимства</em></h4>
+      <p>Курс выстраивает рассмотрение гостя как пользователя продукта и разбирает полный цикл проектирования: исследование аудитории, картирование пути гостя, формулирование продуктовых гипотез, разработка минимально жизнеспособной версии формата, тестирование на реальных пользователях, оценка метрик удержания и подготовка решения к запуску.</p>
+      <div class="outcomes">
+        <b>На выходе студент умеет</b>
+        Делать карту гостевого пути для отеля или события, формулировать продуктовые гипотезы, проверять их на 30+ пользователях, защищать MVP перед заказчиком.
+      </div>
+    </div>
+    <div class="side">
+      <b>Связан с треками</b>
+      Продуктовый менеджер, CX-менеджер, продюсер форматов, предприниматель.
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="meta">
+      <div class="code">HOS-301</div>
+      <div>Сем. V · 8 ECTS</div>
+      <div style="margin-top:14px;">Индустриальный партнер</div>
+      <div style="font-size:13px; margin-top:4px; color:var(--ink); font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px">Сириус, ВДНХ</div>
+    </div>
+    <div class="main">
+      <h4>Дестинация <em>как продукт</em></h4>
+      <p>Регион, район или курортный кластер рассматриваются как самостоятельный продукт со своей экономикой, брендом и моделью гостевого потока. В курсе разбираются кейсы Сочи, Калининграда, Алтая и Карелии, отрабатываются финансовая модель дестинации, конфигурация ролей региональных партнеров и упаковка территориального бренда для разных типов аудиторий.</p>
+      <div class="outcomes">
+        <b>На выходе студент умеет</b>
+        Собрать стратегию развития туристической дестинации, посчитать ее экономику, разложить роли региональных партнеров, упаковать территорию в продаваемый бренд.
+      </div>
+    </div>
+    <div class="side">
+      <b>Связан с треками</b>
+      Дестинационный менеджмент, девелопмент курортов, культурно-туристические программы.
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="meta">
+      <div class="code">HOS-205</div>
+      <div>Сем. IV · 6 ECTS</div>
+      <div style="margin-top:14px;">Индустриальный партнер</div>
+      <div style="font-size:13px; margin-top:4px; color:var(--ink); font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px">Outline, Signal</div>
+    </div>
+    <div class="main">
+      <h4>Событийное продюсирование <em>и культурные форматы</em></h4>
+      <p>Курс проходит полный путь от концепции события до его проведения и постсобытийной коммуникации, включая работу с площадкой, программой, артистами, бюджетом и операционной моделью дня. В качестве итогового задания группа студентов собирает мини-фестиваль или культурную программу с настоящей аудиторией, на которой проверяется каждый этап подготовки.</p>
+      <div class="outcomes">
+        <b>На выходе студент умеет</b>
+        Разработать концепт событийного продукта, посчитать его сметы и риски, договориться с партнерами и площадками, собрать команду продакшна и провести событие.
+      </div>
+    </div>
+    <div class="side">
+      <b>Связан с треками</b>
+      Продюсер событий, культурные программы, креативный туризм.
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="meta">
+      <div class="code">HOS-305</div>
+      <div>Сем. V · 6 ECTS</div>
+      <div style="margin-top:14px;">Индустриальный партнер</div>
+      <div style="font-size:13px; margin-top:4px; color:var(--ink); font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px">Mantera Group</div>
+    </div>
+    <div class="main">
+      <h4>Финансы и юнит-экономика <em>впечатления</em></h4>
+      <p>Курс посвящен финансовой стороне проектов в индустрии: финансовому результату отеля, события и курорта, юнит-экономике впечатления и стоимости привлечения гостя, динамическому ценообразованию с использованием отраслевых показателей. Итоговая работа - финансовая модель курортного объекта на горизонте пяти лет с защитой ценовой стратегии.</p>
+      <div class="outcomes">
+        <b>На выходе студент умеет</b>
+        Собрать финансовую модель проекта в индустрии с горизонтом 3-5 лет, посчитать юнит-экономику, предложить ценовую стратегию и обосновать ее перед инвестором.
+      </div>
+    </div>
+    <div class="side">
+      <b>Связан с треками</b>
+      Коммерческое развитие, девелопмент, предпринимательство.
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="meta">
+      <div class="code">HOS-401</div>
+      <div>Сем. VII · 8 ECTS</div>
+      <div style="margin-top:14px;">Индустриальный партнер</div>
+      <div style="font-size:13px; margin-top:4px; color:var(--ink); font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px">Aman, Six Senses</div>
+    </div>
+    <div class="main">
+      <h4>Премиальный сервис <em>и лояльность гостя</em></h4>
+      <p>Курс разбирает, что отличает ультрапремиальные бренды индустрии от среднего сегмента и за счет чего формируется их ценовая премия. Содержание включает стандарты обслуживания люкс-сегмента, психологию гостя в этой ценовой категории, программы лояльности, проектирование ритуала и среды как самостоятельных продуктовых элементов. Кейсы строятся вокруг Six Senses, Rosewood, Aman и российских проектов сопоставимого уровня.</p>
+      <div class="outcomes">
+        <b>На выходе студент умеет</b>
+        Спроектировать сервисный сценарий премиального объекта, выстроить программу лояльности, поднять NPS гостя, обучить команду стандартам высокого уровня.
+      </div>
+    </div>
+    <div class="side">
+      <b>Связан с треками</b>
+      Премиальный сервис, программы лояльности, бренд гостеприимства.
+    </div>
+  </div>
+
+  <div class="course">
+    <div class="meta">
+      <div class="code">HOS-310</div>
+      <div>Сем. V-VI · 6 ECTS</div>
+      <div style="margin-top:14px;">Индустриальный партнер</div>
+      <div style="font-size:13px; margin-top:4px; color:var(--ink); font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px">Технологический партнер</div>
+    </div>
+    <div class="main">
+      <h4>ИИ и данные <em>в гостеприимстве</em></h4>
+      <p>Курс посвящен инструментам искусственного интеллекта, которые уже стали стандартом индустриальной практики: анализ отзывов через большие языковые модели, прогноз загрузки, динамическое ценообразование, персонализация маршрута гостя, генеративные сценарии для контента и сервисных коммуникаций. Каждая тема разбирается в формате конкретной отраслевой задачи с измеряемым результатом.</p>
+      <div class="outcomes">
+        <b>На выходе студент умеет</b>
+        Собрать рабочий ИИ-сценарий для конкретной задачи в гостеприимстве, оценить его экономику, защитить решение перед нетехническим руководителем.
+      </div>
+    </div>
+    <div class="side">
+      <b>Связан с треками</b>
+      Все треки. Сквозная компетенция программы.
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER X - PROJECTS ============ -->
+<section id="ch10" class="reveal">
+  <div class="section-header">
+    <div class="num">X.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава десятая · Проекты</div>
+      <h2>Проектная модель <em>программы</em></h2>
+    </div>
+  </div>
+
+  <p class="lead" style="max-width:64ch; margin-bottom:60px">Проектная составляющая программы построена на работе с действующими индустриальными заказчиками: брифы поступают со стороны компаний и территориальных операторов, защита проводится перед заказчиком, а не перед академической комиссией. Такая модель формирует у студента опыт ответственности перед внешним клиентом и понимание того, как устроена коммерческая работа в индустрии.</p>
+
+  <div class="projects-flow">
+    <div class="pf">
+      <div class="yr">Год I</div>
+      <h5>Аудит гостевого пути</h5>
+      <p>Команда из 4-5 студентов работает с действующим отелем или культурным объектом: фиксирует карту опыта, выделяет точки потери качества, формулирует приоритетные изменения для заказчика.</p>
+    </div>
+    <div class="pf">
+      <div class="yr">Год II</div>
+      <h5>Разработка концепта</h5>
+      <p>Группа разрабатывает прототип формата по запросу партнера - нового события, обновленного гостевого предложения или программы лояльности - с последующим тестированием на пользователях.</p>
+    </div>
+    <div class="pf">
+      <div class="yr">Год III</div>
+      <h5>Региональный кейс</h5>
+      <p>Двух- или трехнедельный выезд в регион с работой на стороне туроператора, курорта или региональной администрации; результатом становится оформленная стратегия развития конкретной территории.</p>
+    </div>
+    <div class="pf">
+      <div class="yr">Год IV</div>
+      <h5>Собственный запуск</h5>
+      <p>Студент или малая команда выводит на рынок собственный продукт - событие, туристический формат или гостевой проект - с реальной аудиторией, выручкой и обратной связью от рынка.</p>
+    </div>
+  </div>
+
+  <div class="projects-types">
+    <div>
+      <div class="chapter-mark" style="margin-bottom:24px">Типы заказчиков</div>
+      <ul class="clients-list">
+        <li><span class="l">Гостиничные группы</span><span class="r">Новые форматы и развитие клиентского опыта</span></li>
+        <li><span class="l">Курортные операторы</span><span class="r">Развитие гостевого предложения и территории</span></li>
+        <li><span class="l">Музеи и культурные институции</span><span class="r">Работа с аудиторией, программа, продукт</span></li>
+        <li><span class="l">Региональные администрации</span><span class="r">Туристический бренд и развитие дестинации</span></li>
+        <li><span class="l">Событийные агентства</span><span class="r">Концепции и производство событий</span></li>
+        <li><span class="l">Тревел-стартапы</span><span class="r">Гипотезы, прототипы, тестирование</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:24px">Организация команды</div>
+      <p style="font-size:15px; color:var(--ink-soft); margin-bottom:18px">Проектная группа состоит из 4-6 студентов с распределенными ролями: продуктовое управление, аналитика, проектирование опыта, операционное обеспечение и коммерческое направление. Раз в две недели проводится рабочая встреча с заказчиком; финальная защита проходит перед командой клиента.</p>
+      <p style="font-size:15px; color:var(--ink-soft); margin-bottom:18px">Каждому проекту назначается ментор из индустрии, который участвует в работе наряду с преподавателем и обеспечивает практическую обратную связь по ключевым решениям.</p>
+      <p style="font-size:15px; color:var(--ink-soft)">Лучшие проекты включаются в портфолио программы и презентуются на ежегодном демо-дне; неуспешные кейсы становятся материалом отдельного семинара со студентами.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER XI - AI ============ -->
+<section id="ch11" class="ai-section reveal" style="padding:120px 6vw">
+  <div class="section-header">
+    <div class="num">XI.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава одиннадцатая · ИИ</div>
+      <h2>Роль искусственного интеллекта <em>в программе</em></h2>
+    </div>
+  </div>
+
+  <div class="ai-grid">
+    <div>
+      <p class="lead" style="margin-bottom:30px">Инструменты искусственного интеллекта встроены в большинство дисциплин программы и используются как рабочий контур решения отраслевых задач: анализ отзывов гостей, прогнозирование загрузки объектов, проектирование персональных маршрутов, генерация контента, поддержка работы с гипотезами.</p>
+      <p style="font-size:15px; color:var(--ink-soft); margin-bottom:18px">К четвертому курсу у выпускника сформирован собственный набор инструментов под типовые задачи в индустрии и понимание границ их применимости - в частности, способность отличить ситуацию, где модель усиливает решение, от случаев, где она дает результат с ошибкой, заметной гостю или партнеру.</p>
+      <p style="font-size:15px; color:var(--ink-soft)">Программа обеспечивает доступ к корпоративным версиям моделей и отраслевым системам через прямые соглашения с поставщиками, что позволяет вести обучение на инструментах, которыми пользуются действующие индустриальные команды.</p>
+    </div>
+    <div class="ai-tools">
+      <h5>Применение в дисциплинах</h5>
+      <div class="row"><b>Языковые модели</b><span>Анализ массивов отзывов гостей, выявление повторяющихся проблем, подготовка стандартных ответов сервисной службы. Применяется в курсах клиентского опыта и операционного управления.</span></div>
+      <div class="row"><b>Прогноз загрузки</b><span>Модели машинного обучения на исторических данных гостиничных объектов. Применяется в курсах финансов и динамического ценообразования.</span></div>
+      <div class="row"><b>Персонализация</b><span>Рекомендательные системы для маршрута гостя и программ лояльности. Применяется в курсе продуктового менеджмента.</span></div>
+      <div class="row"><b>Генерация контента</b><span>Тексты, визуальные материалы, сценарии событий. Применяется в курсах бренд-менеджмента и сторителлинга.</span></div>
+      <div class="row"><b>Голосовые агенты</b><span>Сценарии работы консьерж-сервиса, бронирование, поддержка гостя. Применяется в курсах клиентского опыта и сервис-дизайна.</span></div>
+      <div class="row"><b>Аналитика поля</b><span>Мониторинг упоминаний бренда, конкурентов и дестинаций. Применяется в курсах маркетинга и бренда.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER XII - THESIS ============ -->
+<section id="ch12" class="reveal">
+  <div class="section-header">
+    <div class="num">XII.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава двенадцатая · ВКР</div>
+      <h2>Итоговая аттестация <em>и форматы защиты</em></h2>
+    </div>
+  </div>
+
+  <p class="lead" style="max-width:62ch; margin-bottom:60px">Выпускник выбирает один из четырех форматов итоговой работы. Общее требование - наличие материального результата, проверяемого индустрией: рынка, заказчика или подтвержденного пилотного запуска. Классический академический формат "диплом без артефакта" в программе не предусмотрен.</p>
+
+  <div class="thesis-options">
+    <div>
+      <div class="t">α</div>
+      <h5>Запущенный продукт</h5>
+      <p>Действующий формат с подтвержденной экономикой: гостевой опыт, событие, туристический сервис или программа лояльности с показателями выручки, аудитории и удержания.</p>
+    </div>
+    <div>
+      <div class="t">β</div>
+      <h5>Прототип со стартапом</h5>
+      <p>Минимально жизнеспособная версия продукта с финансовой моделью, сформированной командой и пилотным внедрением у партнера; формат подготовлен к привлечению финансирования или интеграции в действующую индустриальную группу.</p>
+    </div>
+    <div>
+      <div class="t">γ</div>
+      <h5>Стратегия выхода на рынок</h5>
+      <p>Готовая стратегия выхода нового продукта или объекта на рынок. С разделами по позиционированию, каналам, P и L и партнерам.</p>
+    </div>
+    <div>
+      <div class="t">δ</div>
+      <h5>Исследование рынка</h5>
+      <p>Глубокое полевое исследование сегмента или дестинации с выводами, которые партнер берет в работу. Аналог консалтингового кейса.</p>
+    </div>
+  </div>
+
+  <div style="background:var(--paper); padding:40px; margin-top:60px; border:1px solid var(--line)">
+    <div class="chapter-mark" style="margin-bottom:18px">Жюри защиты</div>
+    <p style="font-size:16px; line-height:1.55; max-width:74ch">Состав аттестационной комиссии формируется на 60% из внешних экспертов индустрии: представители Cosmos, Mantera, выпускники программ Aman и Six Senses, кураторы образовательных и культурных площадок ВДНХ и Сириуса, руководители региональных курортных операторов. Защита проходит в формате презентации продукта и последующего обсуждения продолжительностью около 30 минут. Оценка проводится по четырем критериям: продуктовая зрелость, обоснованность экономической модели, качество исполнения и потенциал масштабирования.</p>
+  </div>
+</section>
+
+<!-- ============ CHAPTER XIII - PARTNERS ============ -->
+<section id="ch13" class="reveal">
+  <div class="section-header">
+    <div class="num">XIII.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава тринадцатая · Партнеры</div>
+      <h2>Партнерская модель <em>программы</em></h2>
+    </div>
+  </div>
+
+  <div class="partners-grid">
+    <div>
+      <p class="lead" style="margin-bottom:30px">Индустриальное партнерство в программе предполагает содержательное участие, а не репрезентативное присутствие. Каждое партнерское соглашение определяет конкретный формат вклада: предоставление брифа, наставническое сопровождение проекта, организация стажировки или участие в защите итоговых работ.</p>
+      <ul class="partner-types">
+        <li><b>Гостиничные и курортные группы</b><span>Cosmos, Mantera, Альфа-Курорт, "Сила" и сети регионального уровня. Предоставляют брифы, площадки для стажировок и операционные кейсы.</span></li>
+        <li><b>Культурные институции</b><span>Сириус, ВДНХ, музейные группы, фестивали. Включаются в работу студентов на уровне программы, аудитории и продуктовых решений.</span></li>
+        <li><b>Региональные операторы</b><span>Туристические офисы Алтая, Калининграда, Карелии и Сочи. Выступают принимающей стороной выездных модулей и заказчиками территориальных брифов.</span></li>
+        <li><b>Тревел-стартапы и продюсерские центры</b><span>Растущие команды, нуждающиеся в дополнительных ресурсах для проверки продуктовых гипотез.</span></li>
+        <li><b>Технологические поставщики</b><span>Системы управления гостиницей, клиентские базы, аналитические платформы. Предоставляют доступ к корпоративным версиям инструментов и кейсам отраслевых внедрений.</span></li>
+      </ul>
+    </div>
+    <div class="partner-exchange">
+      <h5>Обмен с партнером</h5>
+      <div class="row"><b>Что они дают</b><span class="arr">→</span><span>Что они получают</span></div>
+      <div class="row"><span>Бриф и кейс</span><span class="arr">⇄</span><span>Готовое решение от команды + ментор внутри</span></div>
+      <div class="row"><span>Ментора 4 ч / мес</span><span class="arr">⇄</span><span>Прямой доступ к талантам и ранний найм</span></div>
+      <div class="row"><span>Стажировку</span><span class="arr">⇄</span><span>Дешевая высокомотивированная команда</span></div>
+      <div class="row"><span>Финансирование акселератора</span><span class="arr">⇄</span><span>Преимущественное право на запуск стартапов</span></div>
+      <div class="row"><span>Участие в демо-дне</span><span class="arr">⇄</span><span>Доступ к выпускной волне и портфолио всей программы</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER XIV - ADMISSIONS ============ -->
+<section id="ch14" class="reveal">
+  <div class="section-header">
+    <div class="num">XIV.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава четырнадцатая · Набор</div>
+      <h2>Модель набора <em>на горизонте шести лет</em></h2>
+    </div>
+  </div>
+
+  <div class="plan-table">
+    <div class="h">Учебный год</div>
+    <div class="h">Новый набор</div>
+    <div class="h">Студентов на программе</div>
+    <div class="h">Стоимость / год</div>
+
+    <div class="yr">2027 / 28</div>
+    <div class="v">30 <small>первый запуск</small></div>
+    <div class="v">30</div>
+    <div class="v">1 100 000 ₽</div>
+
+    <div class="yr">2028 / 29</div>
+    <div class="v">37</div>
+    <div class="v">67</div>
+    <div class="v">1 210 000 ₽</div>
+
+    <div class="yr">2029 / 30</div>
+    <div class="v">44</div>
+    <div class="v">111</div>
+    <div class="v">1 331 000 ₽</div>
+
+    <div class="yr">2030 / 31</div>
+    <div class="v">46</div>
+    <div class="v">157</div>
+    <div class="v">1 464 100 ₽</div>
+
+    <div class="yr">2031 / 32</div>
+    <div class="v">~50 <small>первый выпуск</small></div>
+    <div class="v">181</div>
+    <div class="v">1 610 510 ₽</div>
+
+    <div class="yr">2032 / 33</div>
+    <div class="v">~50</div>
+    <div class="v">200</div>
+    <div class="v">1 771 561 ₽</div>
+  </div>
+
+  <p style="font-size:13px; color:var(--ink-soft); max-width:80ch; line-height:1.5">Цена индексируется на 10% в год вместе с премиальным сегментом высшего образования и инфляционным циклом. Первый выпуск - лето 2031.</p>
+
+  <div class="program-grid" style="margin-top:60px">
+    <div>
+      <div class="chapter-mark" style="margin-bottom:20px">Каналы привлечения</div>
+      <ul style="list-style:none">
+        <li style="padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15px">Дни открытых дверей на площадках партнерских отельных групп (Cosmos, Mantera) с участием действующих руководителей объектов</li>
+        <li style="padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15px">Видеоконтент на YouTube и подкаст-форматы совместно с практиками индустрии и кураторами программы</li>
+        <li style="padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15px">Программа амбассадоров среди старшеклассников ведущих школ Москвы и крупных региональных центров</li>
+        <li style="padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15px">Региональные выезды команды программы по маршруту Сочи, Казань, Калининград, Екатеринбург с серией встреч и собеседований</li>
+        <li style="padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15px">Таргетированные рекламные кампании в Telegram и VK с двойным фокусом на абитуриентов 16-18 лет и их родителей</li>
+        <li style="padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15px">Цикл открытых лекций с приглашенными представителями индустрии шесть раз в учебном году</li>
+      </ul>
+    </div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:20px">Требования к абитуриенту</div>
+      <ul style="list-style:none">
+        <li style="padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15px">Результаты ЕГЭ по русскому языку, иностранному языку и математике или обществознанию с пороговым баллом от 75</li>
+        <li style="padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15px">Творческое испытание в формате эссе и проектного задания по разработке гостевого опыта</li>
+        <li style="padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15px">Собеседование с приемной комиссией программы продолжительностью 40 минут с участием двух экспертов</li>
+        <li style="padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15px">Подтвержденный уровень владения английским языком от B1 по результатам теста или интервью</li>
+        <li style="padding:16px 0; border-bottom:1px solid var(--line-soft); font-size:15px">Дополнительным преимуществом учитывается опыт работы в индустрии, событийных проектах или туристических форматах</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chapter-mark" style="margin-top:80px; margin-bottom:24px">Воронка набора · сентябрь 2027</div>
+  <div class="funnel">
+    <div><div class="step">Касание</div><div class="v">18 000</div><div class="lbl">охват кампаний</div></div>
+    <div><div class="step">Заявка</div><div class="v">1 100</div><div class="lbl">регистраций на ДОД</div></div>
+    <div><div class="step">Документы</div><div class="v">240</div><div class="lbl">подали полный пакет</div></div>
+    <div><div class="step">Испытания</div><div class="v">140</div><div class="lbl">прошли творческое</div></div>
+    <div><div class="step">Зачислено</div><div class="v">30</div><div class="lbl">платных мест</div></div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER XV - ECONOMICS ============ -->
+<section id="ch15" class="reveal">
+  <div class="section-header">
+    <div class="num">XV.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава пятнадцатая · Экономика</div>
+      <h2>Экономика программы <em>на шестилетнем горизонте</em></h2>
+    </div>
+  </div>
+
+  <div class="econ-grid">
+    <div>
+      <div class="chapter-mark" style="margin-bottom:20px">Доходы, расходы, прибыль · млн ₽</div>
+      <div class="econ-table">
+        <div class="row h">
+          <div>Год</div><div>Студентов</div><div>Доход</div><div>Прибыль</div>
+        </div>
+        <div class="row">
+          <div class="label">2027 / 28</div><div>30</div><div>33,0</div><div>3,9</div>
+        </div>
+        <div class="row">
+          <div class="label">2028 / 29</div><div>67</div><div>81,1</div><div>11,6</div>
+        </div>
+        <div class="row">
+          <div class="label">2029 / 30</div><div>111</div><div>147,7</div><div>21,3</div>
+        </div>
+        <div class="row">
+          <div class="label">2030 / 31</div><div>157</div><div>229,9</div><div>41,7</div>
+        </div>
+        <div class="row">
+          <div class="label">2031 / 32</div><div>181</div><div>291,5</div><div>58,5</div>
+        </div>
+        <div class="row">
+          <div class="label">2032 / 33</div><div>200</div><div>354,3</div><div>75,8</div>
+        </div>
+        <div class="row total">
+          <div class="label">∑ за 6 лет</div><div></div><div><b>1 137,5</b></div><div><b>212,8</b></div>
+        </div>
+      </div>
+      <p style="font-size:13px; color:var(--ink-soft); margin-top:20px; line-height:1.5">Программа выходит на положительный финансовый результат начиная с первого учебного года; маржинальность увеличивается с 12% в первый год до 21% к шестому. Кумулятивный денежный поток покрывает первоначальные инвестиции в запуск к концу 2029 года.</p>
+    </div>
+    <div class="risks">
+      <h5>Ключевые риски и инструменты их компенсации</h5>
+      <ul>
+        <li><b>Недонабор в первый год</b><span>Плановый объем 30 мест задан консервативно относительно емкости рынка; маркетинговый бюджет содержит 20-процентный резерв на доводку воронки и точечную работу с родителями.</span></li>
+        <li><b>Потеря ключевого партнера</b><span>Партнерские соглашения не являются эксклюзивными; механизмы замены отработаны на горизонте 3-4 месяцев с учетом готовности резервного пула индустриальных контактов.</span></li>
+        <li><b>Уход преподавателей-практиков</b><span>Команда формируется из 12 и более ведущих практиков индустрии без единой точки отказа; ключевые курсы обеспечиваются перекрывающимися ролями.</span></li>
+        <li><b>Снижение туристического рынка</b><span>Внутренний туризм сохраняет устойчивость в кризисных сценариях, а развитие дестинаций демонстрирует меньшую цикличность по сравнению с массовым туризмом.</span></li>
+        <li><b>Чувствительность к цене</b><span>При выявлении ценовой эластичности на первом наборе во второй год возможно снижение индексации с 10% до 5% при сохранении плановой маржинальности.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTER XVI - LAUNCH ============ -->
+<section id="ch16" class="reveal">
+  <div class="section-header">
+    <div class="num">XVI.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава шестнадцатая · Запуск</div>
+      <h2>План запуска через цикл <em>Продуктового комитета</em></h2>
+    </div>
+  </div>
+
+  <p class="lead" style="max-width:74ch; margin-bottom:60px">Подготовка программы идет по стандартному циклу Продуктового комитета Универсального Университета. Точка утверждения - обязательный июльский ПК 2026 года, на котором принимается портфельное решение о запуске. За ним следуют годовая упаковка и приемная кампания, которые завершаются первым набором в сентябре 2027 года.</p>
+
+  <div class="launch-stages">
+    <div>
+      <div class="ph">К июлю 2026 · подача на ПК</div>
+      <h4>Полный пакет для утверждения</h4>
+      <ul>
+        <li>Презентация программы и маркетинговый бриф по форме положения о ПК</li>
+        <li>Заключение маркетинга: рынок, аудитория, спрос, конкурентное поле, УТП, риски набора</li>
+        <li>Заключение финансов: план набора, стоимость, расходы, юнит-экономика, сценарии</li>
+        <li>Заключение академического качества: образовательный результат, доля CET, регуляторика</li>
+        <li>Учебный план на восемь семестров с дисциплинами и образовательными результатами</li>
+        <li>Проекты программ ключевых дисциплин и архитектура использования ИИ</li>
+        <li>Предварительный состав преподавателей и предложения по модели набора</li>
+      </ul>
+    </div>
+    <div>
+      <div class="ph">Август 2026 - март 2027 · упаковка</div>
+      <h4>Реализация решений ПК</h4>
+      <ul>
+        <li>Полная редакция программ всех дисциплин с описанием образовательных результатов</li>
+        <li>Подтвержденный кадровый состав преподавателей и менторов программы</li>
+        <li>Подписанные партнерские соглашения с фиксированными форматами участия</li>
+        <li>Визуальный язык программы, фотоматериалы и видеоманифест</li>
+        <li>Сайт программы и инфраструктура приемной воронки</li>
+        <li>Сценарии дней открытых дверей и материалы для родительской аудитории</li>
+        <li>Утвержденная ценовая политика, система скидок и стипендиальных программ</li>
+      </ul>
+    </div>
+    <div>
+      <div class="ph">Февраль - август 2027 · приемная кампания</div>
+      <h4>Набор и операционная готовность</h4>
+      <ul>
+        <li>Февральский ПК - контрольная точка по приемной кампании при необходимости</li>
+        <li>Сформированная команда программы: директор, два куратора, методист</li>
+        <li>Региональные туры и дни открытых дверей по основным городам охвата</li>
+        <li>Готовые материалы первого семестра, рабочие пространства, цифровые системы</li>
+        <li>Распланированный первый региональный модуль с подтвержденным партнером</li>
+        <li>Завершенная приемная кампания и подписанные договоры со студентами</li>
+        <li>Утвержденное расписание сентября 2027 года и старт обучения</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="top">
+    <div>
+      <h2>Universal University<br />Гостеприимство и экономика впечатлений</h2>
+    </div>
+    <div class="right">
+      <p>Команда программы готова к содержательному диалогу с гостиничными и курортными группами, культурными институциями, операторами туристических дестинаций и инвесторами образовательных проектов.</p>
+      <p style="margin-top:24px; font-size:13px; color:rgba(243,238,229,0.5); letter-spacing:0.1em; text-transform:uppercase">Контакт куратора программы</p>
+      <p style="margin-top:8px"><a href="mailto:info@u.university" style="color:var(--bronze-light); font-family:'Manrope', sans-serif; font-size:22px; text-decoration:none; letter-spacing:0.01em">info@u.university</a></p>
+    </div>
+  </div>
+  <div class="bottom">
+    <span>© 2026 · Universal University · Москва</span>
+    <span>Презентация программы · версия 2.0</span>
+  </div>
+</footer>
+
+<script>
+  // Все .reveal элементы получают .in при появлении в области видимости
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.05, rootMargin: '0px 0px -10% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // Для надежности через 3 сек принудительно раскрываем все секции
+  setTimeout(() => {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }, 3000);
+</script>
+
+</body>
+</html>

@@ -25,6 +25,11 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
+  html{
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+  *,*::before,*::after{box-sizing:border-box}
   body{
     background:var(--bone);
     color:var(--ink);
@@ -34,6 +39,8 @@
     line-height:1.55;
     letter-spacing:0.005em;
     overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
   }
   ::selection{background:var(--moss);color:var(--bone)}
 
@@ -881,6 +888,7 @@
     padding:24px 0;
     border-bottom:1px solid var(--line-soft);
   }
+  .partner-types li:first-child{padding-top:0}
   .partner-types li b{
     font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     
@@ -1552,6 +1560,8 @@
   @media (max-width: 768px){
     /* Безопасность для всей страницы: не вылезаем за viewport */
     html, body{ overflow-x: hidden; width: 100%; }
+    /* Длинные слова и ссылки не должны ломать сетку */
+    p, li, h1, h2, h3, h4, h5, td, th, span, a{ overflow-wrap: break-word; word-wrap: break-word; }
 
     /* Уменьшаем боковые отступы секций - иначе на 390px полезной ширины почти не остается */
     section{ padding: 70px 20px; }
@@ -2330,7 +2340,7 @@
     </div>
   </div>
 
-  <p class="lead" style="max-width:74ch; margin-top:48px; margin-bottom:0; font-size:17px">Принцип сборки: каждый крупный проект в программе - от аудита гостевого пути на втором семестре до защиты диплома - демонстрирует все три измерения. Креативное решение, экономическая модель и цифровой инструментарий собираются вместе. Программа не выпускает специалистов по одной из букв.</p>
+  <p class="lead" style="max-width:74ch; margin-top:0; margin-bottom:0; font-size:17px">Принцип сборки: каждый крупный проект в программе - от аудита гостевого пути на втором семестре до защиты диплома - демонстрирует все три измерения. Креативное решение, экономическая модель и цифровой инструментарий собираются вместе. Программа не выпускает специалистов по одной из букв.</p>
 
   <div class="comp-grid">
     <div>
@@ -2505,7 +2515,7 @@
     </div>
     <div class="sem year-4">
       <div class="sem-num">Сем. VIII · весна</div>
-      <div class="sem-title">Свое</div>
+      <div class="sem-title">Собственный проект</div>
       <ul>
         <li>Запуск собственного продукта или стартапа</li>
         <li>Стратегия выхода на рынок и предпродажи</li>
@@ -2803,9 +2813,10 @@
     </div>
   </div>
 
+  <p class="lead" style="max-width:78ch; margin-bottom:48px">Индустриальное партнерство в программе предполагает содержательное участие, а не репрезентативное присутствие. Каждое партнерское соглашение определяет конкретный формат вклада: предоставление брифа, наставническое сопровождение проекта, организация стажировки или участие в защите итоговых работ.</p>
+
   <div class="partners-grid">
     <div>
-      <p class="lead" style="margin-bottom:30px">Индустриальное партнерство в программе предполагает содержательное участие, а не репрезентативное присутствие. Каждое партнерское соглашение определяет конкретный формат вклада: предоставление брифа, наставническое сопровождение проекта, организация стажировки или участие в защите итоговых работ.</p>
       <ul class="partner-types">
         <li><b>Гостиничные и курортные группы</b><span>Cosmos, Mantera, Альфа-Курорт, "Сила" и сети регионального уровня. Предоставляют брифы, площадки для стажировок и операционные кейсы.</span></li>
         <li><b>Культурные институции</b><span>Сириус, ВДНХ, музейные группы, фестивали. Включаются в работу студентов на уровне программы, аудитории и продуктовых решений.</span></li>

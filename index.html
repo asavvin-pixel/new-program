@@ -1179,6 +1179,260 @@
     color:var(--bronze);
   }
 
+  /* ---------- INVESTOR LENS ---------- */
+  .invest-section{
+    background:var(--paper);
+  }
+  .scenario-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-bottom:48px;
+  }
+  @media(max-width:900px){.scenario-grid{grid-template-columns:1fr}}
+  .scenario-col{
+    background:var(--paper);
+    padding:32px 28px;
+  }
+  .scenario-col.base{background:var(--bone)}
+  .scenario-col.stress{background:#efe8d8}
+  .scenario-col.down{background:#e8dfca}
+  .scenario-label{
+    font-family:'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size:10px;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    margin-bottom:8px;
+  }
+  .scenario-name{
+    font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--ink);
+    margin-bottom:6px;
+    line-height:1.1;
+  }
+  .scenario-cond{
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-bottom:20px;
+    line-height:1.4;
+  }
+  .scenario-num{
+    font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size:38px;
+    line-height:1;
+    color:var(--moss);
+    margin:18px 0 6px;
+  }
+  .scenario-num.neg{color:var(--rust)}
+  .scenario-num span{
+    font-family:'Cormorant Garamond', Georgia, serif;
+    font-style:italic;
+    font-size:16px;
+    color:var(--bronze);
+    margin-left:6px;
+  }
+  .scenario-lbl{
+    font-size:12px;
+    color:var(--ink-soft);
+    line-height:1.4;
+    margin-bottom:14px;
+  }
+  .scenario-list{list-style:none; font-size:13px; color:var(--ink-soft); margin-top:16px}
+  .scenario-list li{padding:5px 0; border-top:1px solid var(--line-soft); line-height:1.4; display:flex; justify-content:space-between; gap:12px}
+  .scenario-list li b{font-family:'Cormorant Garamond', Georgia, serif; font-weight:400; color:var(--ink)}
+
+  .unit-econ{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:48px;
+    margin-bottom:48px;
+  }
+  @media(max-width:900px){.unit-econ{grid-template-columns:1fr; gap:32px}}
+  .unit-econ-numbers{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .unit-econ-numbers > div{
+    background:var(--paper);
+    padding:24px 22px;
+  }
+  .unit-econ-numbers .ue-n{
+    font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size:34px;
+    line-height:1;
+    color:var(--moss);
+    margin-bottom:8px;
+  }
+  .unit-econ-numbers .ue-n span{
+    font-family:'Cormorant Garamond', Georgia, serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--bronze);
+    margin-left:4px;
+  }
+  .unit-econ-numbers .ue-l{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:9.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    margin-bottom:10px;
+  }
+  .unit-econ-numbers .ue-d{
+    font-size:12px;
+    color:var(--ink-soft);
+    line-height:1.45;
+  }
+
+  .partner-status-table{
+    border-top:1px solid var(--ink);
+    margin-bottom:48px;
+  }
+  .partner-status-table .row{
+    display:grid;
+    grid-template-columns:1.3fr 0.7fr 2fr;
+    gap:24px;
+    padding:18px 0;
+    border-bottom:1px solid var(--line-soft);
+    align-items:start;
+  }
+  @media(max-width:768px){.partner-status-table .row{grid-template-columns:1fr; gap:6px}}
+  .partner-status-table .row.h{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:10px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--moss);
+  }
+  .partner-status-table .row .pname{
+    font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-style:italic;
+    font-size:19px;
+    color:var(--ink);
+  }
+  .partner-status-table .row .pstatus{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:10px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--rust);
+    padding-top:5px;
+  }
+  .partner-status-table .row .pformat{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.5;
+  }
+  .partner-disclaimer{
+    background:var(--moss-deep);
+    color:var(--bone);
+    padding:24px 28px;
+    margin-bottom:48px;
+    font-size:14px;
+    line-height:1.55;
+  }
+  .partner-disclaimer b{color:var(--bronze-light); font-weight:400}
+
+  .demand-signals{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:32px;
+  }
+  @media(max-width:900px){.demand-signals{grid-template-columns:1fr; gap:28px}}
+  .demand-signal{
+    border-left:1px solid var(--bronze);
+    padding-left:24px;
+  }
+  .demand-signal .ds-num{
+    font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size:44px;
+    line-height:1;
+    color:var(--moss);
+    margin-bottom:6px;
+  }
+  .demand-signal .ds-num span{
+    font-family:'Cormorant Garamond', Georgia, serif;
+    font-style:italic;
+    font-size:18px;
+    color:var(--bronze);
+    margin-left:4px;
+  }
+  .demand-signal .ds-l{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:10px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    margin-top:14px;
+    margin-bottom:8px;
+  }
+  .demand-signal .ds-d{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.55;
+  }
+
+  .insight-card{
+    background:var(--moss-deep);
+    color:var(--bone);
+    padding:48px 44px;
+    margin-top:48px;
+  }
+  .insight-card .ic-tag{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11px;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    color:var(--bronze-light);
+    margin-bottom:24px;
+  }
+  .insight-card h4{
+    font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-weight:400;
+    font-size:clamp(24px, 2.4vw, 32px);
+    line-height:1.2;
+    color:var(--bone);
+    margin-bottom:24px;
+    max-width:50ch;
+  }
+  .insight-card h4 em{font-style:italic; color:var(--bronze-light)}
+  .insight-card p{
+    font-size:15px;
+    line-height:1.6;
+    color:rgba(243,238,229,0.85);
+    max-width:76ch;
+  }
+  .insight-card p+p{margin-top:14px}
+
+  .sub-h{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--bronze);
+    margin:48px 0 24px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .sub-h:first-of-type{padding-top:0; border-top:none; margin-top:24px}
+  .sub-h .sub-n{
+    font-family:'Cormorant Garamond', Georgia, serif;
+    font-style:italic;
+    font-size:14px;
+    text-transform:none;
+    letter-spacing:0;
+    color:var(--moss);
+    margin-left:10px;
+  }
+
   /* ---------- FAQ (Amazon press-release style) ---------- */
   .faq-section{
     background:var(--paper);
@@ -1292,9 +1546,343 @@
   .hero-title .line2{animation:fadeIn 1.2s 0.3s both}
   .hero-title .line3{animation:fadeIn 1.2s 0.5s both}
   .hero-title .line4{animation:fadeIn 1.2s 0.7s both}
-  @keyframes fadeIn{
-    from{opacity:0; transform:translateY(30px)}
-    to{opacity:1; transform:none}
+  /* ============================================== */
+  /* ============ MOBILE OPTIMIZATION ============= */
+  /* ============================================== */
+  @media (max-width: 768px){
+    /* Безопасность для всей страницы: не вылезаем за viewport */
+    html, body{ overflow-x: hidden; width: 100%; }
+
+    /* Уменьшаем боковые отступы секций - иначе на 390px полезной ширины почти не остается */
+    section{ padding: 70px 20px; }
+
+    /* Topnav: уменьшаем шрифт меты, чтобы помещалось больше информации */
+    .topnav{ padding: 12px 20px; }
+    .uu-logo{ font-size: 12px; }
+    .topnav .meta{
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      gap: 10px;
+    }
+    /* На очень узких отображаем только последний фрагмент - 4 года/набор 2027 */
+    .topnav .meta span:first-child{ display: none; }
+
+    /* Hero: уменьшаем заголовок, чтобы помещался без обрезки */
+    .hero{ padding-top: 70px; }
+    .hero-top{ margin-bottom: 30px; }
+    .hero-title{
+      font-size: clamp(44px, 13vw, 64px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin: 30px 0 30px;
+    }
+    .hero-title .line2{ padding-left: 8vw; }
+    .hero-title .line3{ padding-left: 0; }
+    .hero-title .line4{ padding-left: 6vw; }
+    .hero-bottom{ grid-template-columns: 1fr; gap: 24px; padding-bottom: 40px; }
+    .hero-bottom .desc{ font-size: 16px; max-width: none; }
+
+    /* Stamp-таблица: однострочная сетка с переносом */
+    .stamp{ padding: 18px 18px; }
+    .stamp .row{
+      grid-template-columns: 110px 1fr !important;
+      gap: 12px;
+      font-size: 10.5px;
+      padding: 10px 0;
+    }
+    .stamp .row .label{ letter-spacing: 0.12em; }
+    .stamp .row .value{ text-align: right; word-break: break-word; }
+
+    /* Section header: номер и заголовок в столбик, не сетка */
+    .section-header{ grid-template-columns: 1fr !important; gap: 16px; }
+    .section-header .num{ font-size: 36px; }
+    .section-header h2{
+      font-size: clamp(28px, 7vw, 36px);
+      max-width: none;
+      line-height: 1.1;
+    }
+    .industry-section .section-header .num{ font-size: 36px; }
+
+    /* Lead/основной текст: чуть меньше, плотнее */
+    .lead{ font-size: 16px !important; line-height: 1.45; }
+
+    /* Market stats */
+    .market-stats{ grid-template-columns: 1fr; margin-bottom: 48px; }
+    .market-stats > div{ padding: 24px 20px; }
+    .market-stats .ms-num{ font-size: 46px; }
+    .market-stats .ms-num span{ font-size: 18px; }
+
+    /* Why grid */
+    .why-grid{ grid-template-columns: 1fr; gap: 28px; }
+
+    /* Gap-grid */
+    .gap-grid{ grid-template-columns: 1fr; gap: 24px; }
+    .gap-grid .quote{ font-size: 20px; line-height: 1.3; }
+    .gap-numbers{ grid-template-columns: 1fr 1fr; gap: 24px; }
+    .gap-numbers .n{ font-size: 38px; }
+
+    /* Demand persona cards */
+    .demand-cols{ grid-template-columns: 1fr; gap: 24px; }
+    .persona{ padding: 24px 20px; }
+    .persona h4{ font-size: 22px; }
+
+    /* Evidence cards */
+    .evidence-grid{ grid-template-columns: 1fr; gap: 20px; }
+
+    /* Bench table - превращаем в карточки */
+    .bench{ overflow-x: visible; }
+    .bench table{ min-width: 0; width: 100%; display: block; }
+    .bench thead{ display: none; }
+    .bench tbody{ display: block; }
+    .bench tr{
+      display: block;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+    .bench tr:last-child{ border-bottom: 1px solid var(--line); }
+    .bench td{
+      display: block;
+      padding: 4px 0;
+      border: none;
+      font-size: 13.5px;
+      line-height: 1.5;
+      width: auto !important;
+      word-wrap: break-word;
+    }
+    .bench td:first-child{
+      font-size: 20px !important;
+      color: var(--bronze);
+      margin-bottom: 8px;
+      font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      width: auto !important;
+    }
+    .bench td:before{
+      content: attr(data-label);
+      display: block;
+      font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--moss);
+      margin-bottom: 4px;
+      margin-top: 8px;
+    }
+    .bench td:first-child:before{ content: none; }
+
+    /* USP - тёмный блок: убираем боковые отступы секции, фон растягиваем */
+    .usp{
+      margin: 0 -20px;
+      padding: 70px 20px;
+    }
+    .usp-points{ grid-template-columns: 1fr; gap: 32px; }
+    .usp-points .num{ font-size: 36px; }
+    .usp-points h4{ font-size: 22px; }
+
+    /* Programme */
+    .program-grid{ grid-template-columns: 1fr; gap: 32px; }
+    .careers-list li{ grid-template-columns: 36px 1fr; gap: 12px; }
+    .careers-list li .t{ font-size: 18px; line-height: 1.3; }
+
+    /* Portrait cols */
+    .portrait-cols{ grid-template-columns: 1fr; gap: 28px; }
+
+    /* CET frame - тоже на полную ширину */
+    .cet-frame{
+      margin: 0 -20px 36px;
+      padding: 36px 24px;
+    }
+    .cet-grid{ grid-template-columns: 1fr; gap: 28px; }
+    .cet-letter{ font-size: 80px; }
+
+    /* Compet grid */
+    .comp-grid{ grid-template-columns: 1fr; }
+    .comp-grid > div{ padding: 22px 18px; }
+
+    /* Semesters */
+    .semesters{ grid-template-columns: 1fr; gap: 0; }
+    .sem{ padding: 24px 20px; }
+    .sem-num{ font-size: 28px; }
+    .sem-title{ font-size: 20px; }
+    /* Тёмные семестры (4-й год) тоже на полную ширину */
+    .sem.year-4{ margin: 0; }
+
+    /* Courses */
+    .course{ grid-template-columns: 1fr; gap: 16px; }
+    .course .meta{ padding: 14px 0 0; }
+    .course .main h4{ font-size: 22px; }
+
+    /* Project model */
+    .pf-grid{ grid-template-columns: 1fr; gap: 24px; }
+    .pf h5{ font-size: 20px; }
+
+    /* AI */
+    .ai-grid{ grid-template-columns: 1fr; gap: 24px; }
+    .ai-tools{ padding: 22px 18px; }
+    .ai-tools .row{ grid-template-columns: 1fr; gap: 6px; padding: 12px 0; }
+    .ai-tools .row b{ font-size: 11px; }
+
+    /* Thesis options */
+    .thesis-options{ grid-template-columns: 1fr; gap: 28px; }
+    .thesis-options .t{ font-size: 26px; }
+    .thesis-options h5{ font-size: 18px; }
+
+    /* Partners */
+    .partner-types{ grid-template-columns: 1fr; gap: 22px; }
+    .partner-exchange{
+      margin: 0 -20px;
+      padding: 32px 24px;
+    }
+    .partner-exchange .row{
+      grid-template-columns: 1fr;
+      gap: 4px;
+      padding: 12px 0;
+    }
+    .partner-exchange .row b{ font-size: 14px; }
+    .partner-exchange .row .arr{ display: none; }
+
+    /* Plan table - 2 колонки уже задано в существующем media query */
+    .plan-table .yr{ font-size: 22px; }
+    .plan-table .v{ font-size: 17px; }
+    .plan-table > div{ padding: 14px 14px; }
+
+    /* Funnel - в столбик */
+    .funnel{
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .funnel > div{
+      padding: 18px 16px;
+      border-right: 1px solid var(--line);
+    }
+    .funnel .v{ font-size: 28px; }
+    .funnel .step{ font-size: 9px; }
+    .funnel .lbl{ font-size: 11px; }
+
+    /* Economy table */
+    .econ-grid{ grid-template-columns: 1fr; gap: 36px; }
+    .econ-table .row{
+      grid-template-columns: 0.9fr 0.7fr 1fr 1fr 1fr;
+      gap: 6px;
+      font-size: 11px;
+      padding: 10px 0;
+    }
+    .econ-table .row.h{
+      font-size: 8px;
+      letter-spacing: 0.05em;
+    }
+    .econ-table .row .label{ font-size: 12px; }
+    .econ-table .row.total{ padding: 14px 0; }
+
+    /* Risks */
+    .risks li{ grid-template-columns: 1fr; gap: 4px; padding: 14px 0; }
+    .risks li b{ font-size: 15px; }
+    .risks h5{ font-size: 20px; }
+
+    /* Launch stages */
+    .launch-stages{ grid-template-columns: 1fr; gap: 0; }
+    .launch-stages > div{
+      padding: 28px 22px;
+      border-top: 1px solid var(--line);
+    }
+    .launch-stages h4{ font-size: 22px; }
+
+    /* INVESTOR LENS */
+    .scenario-grid{ grid-template-columns: 1fr; gap: 0; }
+    .scenario-col{ padding: 28px 22px; }
+    .scenario-name{ font-size: 22px; }
+    .scenario-num{ font-size: 34px; }
+
+    .unit-econ{ grid-template-columns: 1fr; gap: 32px; }
+    .unit-econ-numbers{ grid-template-columns: 1fr 1fr; }
+    .unit-econ-numbers > div{ padding: 18px 14px; }
+    .unit-econ-numbers .ue-n{ font-size: 26px; }
+    .unit-econ-numbers .ue-l{ font-size: 8.5px; letter-spacing: 0.18em; }
+    .unit-econ-numbers .ue-d{ font-size: 11px; }
+
+    .partner-status-table .row{
+      grid-template-columns: 1fr;
+      gap: 6px;
+      padding: 18px 0;
+    }
+    .partner-status-table .row.h{ display: none; }
+    .partner-status-table .row .pname{ font-size: 17px; }
+    .partner-status-table .row .pstatus{
+      padding-top: 0;
+      align-self: start;
+      font-size: 9px;
+    }
+    .partner-status-table .row .pformat{ font-size: 13px; }
+    .partner-disclaimer{
+      margin: 0 -20px 36px;
+      padding: 22px 24px;
+      font-size: 13px;
+    }
+
+    .demand-signals{ grid-template-columns: 1fr; gap: 24px; }
+    .demand-signal{ padding-left: 18px; }
+    .demand-signal .ds-num{ font-size: 36px; }
+
+    .insight-card{
+      margin: 36px -20px 0;
+      padding: 36px 24px;
+    }
+    .insight-card h4{ font-size: 22px; }
+    .insight-card p{ font-size: 14px; }
+
+    .sub-h{ font-size: 10px; letter-spacing: 0.18em; }
+    .sub-h .sub-n{ display: block; margin-left: 0; margin-top: 6px; }
+
+    /* FAQ */
+    .faq-item{ grid-template-columns: 1fr; gap: 10px; padding: 28px 0; }
+    .faq-num{ font-size: 30px; }
+    .faq-q{ font-size: 20px; line-height: 1.25; }
+    .faq-a{ font-size: 14px; }
+    .faq-intro{ font-size: 16px; line-height: 1.4; margin-bottom: 36px; }
+
+    /* Footer */
+    footer{ padding: 60px 20px 30px; }
+    footer .top{ grid-template-columns: 1fr; gap: 28px; }
+    footer h2{ font-size: 32px; line-height: 1.05; }
+    footer .right{ padding-left: 0; border-left: none; padding-top: 24px; border-top: 1px solid rgba(243,238,229,0.18); }
+    footer .bottom{
+      grid-template-columns: 1fr;
+      gap: 10px;
+      text-align: left;
+      font-size: 9.5px;
+    }
+
+    /* Photo breaks */
+    .photo-break.full img{ max-height: 60vh; }
+    .photo-break .photo-caption{
+      left: 20px;
+      bottom: 18px;
+      max-width: 78%;
+    }
+    .photo-break .photo-caption .pc-text{ font-size: 16px; line-height: 1.25; }
+    .photo-break .photo-caption .pc-tag{ font-size: 9px; letter-spacing: 0.2em; }
+
+    /* Chapter mark */
+    .chapter-mark{ font-size: 10px; letter-spacing: 0.18em; }
+
+    /* Generic em - убедимся что курсив на mobile сохраняется */
+    em{ font-style: italic; }
+  }
+
+  /* Совсем малая ширина (старые телефоны 360px) */
+  @media (max-width: 380px){
+    section{ padding: 56px 16px; }
+    .topnav{ padding: 10px 16px; }
+    .hero-title{ font-size: 40px; }
+    .section-header h2{ font-size: 26px; }
+    .market-stats .ms-num{ font-size: 40px; }
+    .scenario-col{ padding: 22px 18px; }
+    .unit-econ-numbers{ grid-template-columns: 1fr; }
+    .funnel{ grid-template-columns: 1fr; }
+    .econ-table .row{
+      grid-template-columns: 52px 32px 1fr 1fr 1fr;
+      gap: 3px;
+      font-size: 10.5px;
+    }
   }
 
 </style>
@@ -1531,40 +2119,40 @@
       </thead>
       <tbody>
         <tr>
-          <td>Les Roches, Швейцария</td>
-          <td>Сильный международный нетворк, настоящий действующий отель в кампусе, стажировки в люксе</td>
-          <td>Подготовка ориентирована на операционные позиции в действующих гостиницах, продуктовая и предпринимательская траектория представлена слабо; кампус и образовательный контекст вне российских реалий.</td>
-          <td>≈45 000 € / год · 3,5 года</td>
+          <td data-label="Программа">Les Roches, Швейцария</td>
+          <td data-label="Сильные стороны">Сильный международный нетворк, настоящий действующий отель в кампусе, стажировки в люксе</td>
+          <td data-label="Слабые стороны">Подготовка ориентирована на операционные позиции в действующих гостиницах, продуктовая и предпринимательская траектория представлена слабо; кампус и образовательный контекст вне российских реалий.</td>
+          <td data-label="Цена / формат">≈45 000 € / год · 3,5 года</td>
         </tr>
         <tr>
-          <td>Glion, Швейцария</td>
-          <td>Сила бренда, операционная база, кейсы из Marriott и Accor</td>
-          <td>Менеджмент классического гостиничного формата, ограниченная глубина в темах цифровой аналитики, событийного продюсирования и развития территорий.</td>
-          <td>≈48 000 € / год · 3,5 года</td>
+          <td data-label="Программа">Glion, Швейцария</td>
+          <td data-label="Сильные стороны">Сила бренда, операционная база, кейсы из Marriott и Accor</td>
+          <td data-label="Слабые стороны">Менеджмент классического гостиничного формата, ограниченная глубина в темах цифровой аналитики, событийного продюсирования и развития территорий.</td>
+          <td data-label="Цена / формат">≈48 000 € / год · 3,5 года</td>
         </tr>
         <tr>
-          <td>EHL Lausanne</td>
-          <td>Академическая глубина, репутация, серьезные исследования в индустрии</td>
-          <td>Программа выдержана в традиционной отельной парадигме без отдельного фокуса на экономике впечатлений и управлении дестинациями.</td>
-          <td>≈42 000 € / год · 4 года</td>
+          <td data-label="Программа">EHL Lausanne</td>
+          <td data-label="Сильные стороны">Академическая глубина, репутация, серьезные исследования в индустрии</td>
+          <td data-label="Слабые стороны">Программа выдержана в традиционной отельной парадигме без отдельного фокуса на экономике впечатлений и управлении дестинациями.</td>
+          <td data-label="Цена / формат">≈42 000 € / год · 4 года</td>
         </tr>
         <tr>
-          <td>МГИМО, "Туризм и гостеприимство"</td>
-          <td>Сильная теория и языки</td>
-          <td>Ориентация на классический менеджмент, ограниченная проектная составляющая; выпускники выходят без сформированного отраслевого портфолио.</td>
-          <td>≈580 000 ₽ / год · 4 года</td>
+          <td data-label="Программа">МГИМО, "Туризм и гостеприимство"</td>
+          <td data-label="Сильные стороны">Сильная теория и языки</td>
+          <td data-label="Слабые стороны">Ориентация на классический менеджмент, ограниченная проектная составляющая; выпускники выходят без сформированного отраслевого портфолио.</td>
+          <td data-label="Цена / формат">≈580 000 ₽ / год · 4 года</td>
         </tr>
         <tr>
-          <td>РЭУ им. Плеханова, ВШЭ "Туризм"</td>
-          <td>Доступная стоимость, бюджетные места, экономическая база ВШЭ</td>
-          <td>Клиентский опыт и экономика впечатлений не выделены в самостоятельные дисциплины, состав преподавателей преимущественно академический.</td>
-          <td>360 000 - 590 000 ₽ / год</td>
+          <td data-label="Программа">РЭУ им. Плеханова, ВШЭ "Туризм"</td>
+          <td data-label="Сильные стороны">Доступная стоимость, бюджетные места, экономическая база ВШЭ</td>
+          <td data-label="Слабые стороны">Клиентский опыт и экономика впечатлений не выделены в самостоятельные дисциплины, состав преподавателей преимущественно академический.</td>
+          <td data-label="Цена / формат">360 000 - 590 000 ₽ / год</td>
         </tr>
         <tr class="ours">
-          <td>Universal University</td>
-          <td>Продуктовая логика, клиентский опыт, событийная и территориальная оптика, ИИ как сквозная компетенция, индустриальные партнеры с первого года</td>
-          <td>-</td>
-          <td>1 100 000 ₽ / год · 4 года</td>
+          <td data-label="Программа">Universal University</td>
+          <td data-label="Сильные стороны">Продуктовая логика, клиентский опыт, событийная и территориальная оптика, ИИ как сквозная компетенция, индустриальные партнеры с первого года</td>
+          <td data-label="Слабые стороны">-</td>
+          <td data-label="Цена / формат">1 100 000 ₽ / год · 4 года</td>
         </tr>
       </tbody>
     </table>
@@ -2435,12 +3023,220 @@
   </div>
 </section>
 
-<!-- ============ CHAPTER XVII - FAQ ============ -->
-<section id="ch17" class="reveal faq-section">
+<!-- ============ CHAPTER XVII - INVESTOR LENS ============ -->
+<section id="ch17" class="reveal invest-section">
   <div class="section-header">
     <div class="num">XVII.</div>
     <div>
-      <div class="chapter-mark" style="margin-bottom:14px">Глава семнадцатая · Вопросы и возражения</div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава семнадцатая · Инвестиционная оптика</div>
+      <h2>Программа глазами <em>портфельного инвестора</em></h2>
+    </div>
+  </div>
+
+  <p class="lead" style="max-width:76ch; margin-bottom:48px">Глава адресована тому, кто принимает портфельное решение: членам Продуктового комитета, финансовому контуру Университета, потенциальным со-инвесторам индустриальной части программы. Здесь нет маркетинговых формулировок. Только три сценария финмодели, юнит-экономика одного студента, статус партнерского ландшафта и сигналы спроса, которые не лежат на поверхности.</p>
+
+  <div class="sub-h">A · финансовая модель в трех сценариях <span class="sub-n">с учетом постоянных и переменных расходов</span></div>
+
+  <p style="font-size:14.5px; line-height:1.6; color:var(--ink-soft); max-width:78ch; margin-bottom:32px">Базовый сценарий повторяет цифры бизнес-плана: набор 30 человек в первый год с ростом до 50 к шестому, полная заполняемость относительно плана. Stress собран на типичном для нишевой премиальной программы недонаборе первого года 40 процентов. Downside проигрывает сценарий повторных недонаборов и моделирует условия, при которых программа требует докапитализации.</p>
+
+  <div class="scenario-grid">
+    <div class="scenario-col base">
+      <div class="scenario-label">Сценарий 1</div>
+      <div class="scenario-name">Base</div>
+      <div class="scenario-cond">Заполнение плана 100%. Набор 30 → 50 человек по годам. Индексация чека 10% в год.</div>
+
+      <div class="scenario-num">+212,8 <span>млн ₽</span></div>
+      <div class="scenario-lbl">Кумулятивная прибыль за 6 лет</div>
+
+      <div class="scenario-num">18,7 <span>%</span></div>
+      <div class="scenario-lbl">Средняя маржинальность за период</div>
+
+      <ul class="scenario-list">
+        <li><span>Доход</span><b>1 137,5 млн</b></li>
+        <li><span>Расходы</span><b>924,7 млн</b></li>
+        <li><span>Cash-positive</span><b>с 1-го года</b></li>
+        <li><span>Маржа к 6-му году</span><b>21%</b></li>
+      </ul>
+    </div>
+
+    <div class="scenario-col stress">
+      <div class="scenario-label">Сценарий 2</div>
+      <div class="scenario-name">Stress</div>
+      <div class="scenario-cond">Заполнение 60%. Постоянная часть расходов сохраняется, переменная сокращается на 15%.</div>
+
+      <div class="scenario-num neg">-140,3 <span>млн ₽</span></div>
+      <div class="scenario-lbl">Кумулятивный убыток за 6 лет</div>
+
+      <div class="scenario-num neg">-21,7 <span>%</span></div>
+      <div class="scenario-lbl">Средняя маржинальность за период</div>
+
+      <ul class="scenario-list">
+        <li><span>Доход</span><b>645,6 млн</b></li>
+        <li><span>Расходы</span><b>785,9 млн</b></li>
+        <li><span>Cash-negative</span><b>все 6 лет</b></li>
+        <li><span>Точка пересмотра</span><b>2-й год</b></li>
+      </ul>
+    </div>
+
+    <div class="scenario-col down">
+      <div class="scenario-label">Сценарий 3</div>
+      <div class="scenario-name">Downside</div>
+      <div class="scenario-cond">Заполнение 40%. Постоянные расходы давят на маржу. Сценарий требует докапитализации.</div>
+
+      <div class="scenario-num neg">-287,4 <span>млн ₽</span></div>
+      <div class="scenario-lbl">Кумулятивный убыток за 6 лет</div>
+
+      <div class="scenario-num neg">-70,8 <span>%</span></div>
+      <div class="scenario-lbl">Средняя маржинальность за период</div>
+
+      <ul class="scenario-list">
+        <li><span>Доход</span><b>406,1 млн</b></li>
+        <li><span>Расходы</span><b>693,5 млн</b></li>
+        <li><span>Cash-negative</span><b>все 6 лет</b></li>
+        <li><span>Решение о закрытии</span><b>3-й год</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="font-size:13.5px; line-height:1.55; color:var(--ink-soft); max-width:78ch; margin-bottom:48px">Чувствительность маржи к цене: снижение индексации с 10% до 5% уменьшает кумулятивную прибыль в базовом сценарии до 167 млн ₽, маржинальность к 6-му году с 21% до 16%. Чувствительность к удержанию: падение retention с 88% до 78% год к году сокращает LTV студента на 14% и кумулятивную прибыль на 11%. Программа удерживает положительный финансовый результат при ценовой эластичности до 10% и просадке набора до 25% от плана; за этой границей требуется пересмотр модели.</p>
+
+  <div class="sub-h">B · юнит-экономика студента <span class="sub-n">CAC, retention, LTV и точка окупаемости</span></div>
+
+  <p style="font-size:14.5px; line-height:1.6; color:var(--ink-soft); max-width:78ch; margin-bottom:32px">CAC рассчитан как доля маркетингового бюджета на одного зачисленного студента. Источник цифр маркетингового бюджета - бизнес-план программы. Retention принят 88% год к году с опорой на бенчмарки премиальных образовательных программ в России; LTV рассчитан на горизонте четырех лет обучения с учетом индексации чека на 10%.</p>
+
+  <div class="unit-econ">
+    <div class="unit-econ-numbers">
+      <div>
+        <div class="ue-l">CAC, 1-й год</div>
+        <div class="ue-n">110 <span>тыс ₽</span></div>
+        <div class="ue-d">10% от первого годового чека. Базовый канал - email-рассылка по теплой подписной базе UU и таргетированные офлайн-события.</div>
+      </div>
+      <div>
+        <div class="ue-l">CAC, 6-й год</div>
+        <div class="ue-n">638 <span>тыс ₽</span></div>
+        <div class="ue-d">36% от чека. Рост связан с насыщением теплой базы и переходом на платные каналы охвата.</div>
+      </div>
+      <div>
+        <div class="ue-l">LTV студента</div>
+        <div class="ue-n">4,19 <span>млн ₽</span></div>
+        <div class="ue-d">Чек 1,1 → 1,46 млн ₽ за 4 года с учетом индексации 10% и retention 88% год к году.</div>
+      </div>
+      <div>
+        <div class="ue-l">LTV / CAC</div>
+        <div class="ue-n">38 <span>×</span></div>
+        <div class="ue-d">На первом наборе. К шестому году соотношение опускается до 6×, что остается приемлемым уровнем для образовательного продукта.</div>
+      </div>
+      <div>
+        <div class="ue-l">Payback CAC</div>
+        <div class="ue-n">2 <span>мес</span></div>
+        <div class="ue-d">Маркетинговая инвестиция в студента окупается оплатой первого полугодия обучения.</div>
+      </div>
+      <div>
+        <div class="ue-l">Retention 4 года</div>
+        <div class="ue-n">60 <span>%</span></div>
+        <div class="ue-d">Доля студентов первого набора, доходящих до защиты диплома. Среднее по премиальным программам: 55-65%.</div>
+      </div>
+    </div>
+    <div>
+      <h5 style="font-family:'Cormorant Garamond', Georgia, serif; font-style:italic; font-weight:400; font-size:22px; color:var(--moss); margin-bottom:20px; line-height:1.2">Маркетинговая база Universal University</h5>
+      <p style="font-size:14.5px; line-height:1.6; color:var(--ink-soft); margin-bottom:16px">По данным сводных показателей за 2025 год, направление высшего образования Universal University ведет email-канал с базой в <b>46 491 подписчиков</b>, проявивших интерес к программам высшего образования. Open Rate канала - <b>33,6%</b>, что превышает индустриальный бенчмарк в 20-25% для премиального сегмента.</p>
+      <p style="font-size:14.5px; line-height:1.6; color:var(--ink-soft); margin-bottom:16px">В пересчете на воронку программы: при конверсии 0,15-0,30% от подписной базы в заявку и закрытии заявок 8-12%, теплый канал email-рассылки покрывает в 3-5 раз больше потребности первого набора, чем 30 мест плана.</p>
+      <p style="font-size:14.5px; line-height:1.6; color:var(--ink-soft)">Канал работает на нулевой стоимости касания. Внешний бюджет на первый год набора может быть сокращен на 30-40% относительно бизнес-плана за счет использования внутренней базы.</p>
+    </div>
+  </div>
+
+  <div class="sub-h">C · партнерский ландшафт <span class="sub-n">статус, формат участия, обязательства</span></div>
+
+  <p style="font-size:14.5px; line-height:1.6; color:var(--ink-soft); max-width:78ch; margin-bottom:24px">Текущий статус по всем партнерам - <b>контакт</b>. Переговоры о подписании меморандумов не начаты и являются задачей этапа упаковки программы (август 2026 - март 2027). Подписание LOI запланировано на октябрь-декабрь 2026 года, рамочных партнерских соглашений - на апрель-июнь 2027 года.</p>
+
+  <div class="partner-disclaimer">
+    Раздел отражает <b>целевую партнерскую конфигурацию</b>, а не действующие соглашения. Подписание LOI и меморандумов о сотрудничестве находится в плане работ этапа упаковки программы после июльского ПК 2026 года. До того момента все упомянутые компании следует считать целевыми контактами, не партнерами с обязательствами.
+  </div>
+
+  <div class="partner-status-table">
+    <div class="row h">
+      <div>Целевой партнер</div>
+      <div>Статус</div>
+      <div>Целевой формат участия</div>
+    </div>
+    <div class="row">
+      <div class="pname">Cosmos Hotel Group</div>
+      <div class="pstatus">Контакт</div>
+      <div class="pformat">Брифы операционных кейсов, площадка для стажировок 4-8 студентов в год, участие в дипломной комиссии. Целевая позиция в работе - старший партнер программы по гостиничной операционной составляющей.</div>
+    </div>
+    <div class="row">
+      <div class="pname">Mantera Group</div>
+      <div class="pstatus">Контакт</div>
+      <div class="pformat">Кейсы курортной операционной модели, проектная работа на действующих объектах, ментор-сессии раз в семестр. Целевая позиция - партнер по курортному и территориальному направлению.</div>
+    </div>
+    <div class="row">
+      <div class="pname">Сириус, образовательный центр</div>
+      <div class="pstatus">Контакт</div>
+      <div class="pformat">Партнерство по событийному и культурно-туристическому продюсированию, выездной модуль 2-недельного формата, совместная исследовательская повестка по детским и юношеским форматам.</div>
+    </div>
+    <div class="row">
+      <div class="pname">ВДНХ</div>
+      <div class="pstatus">Контакт</div>
+      <div class="pformat">Кейсы дестинационного менеджмента крупного городского пространства, доступ к операционным метрикам, площадка для дипломных проектов по культурно-туристическому продукту.</div>
+    </div>
+    <div class="row">
+      <div class="pname">Aman, Six Senses (через выпускников)</div>
+      <div class="pstatus">Контакт</div>
+      <div class="pformat">Менторская поддержка через действующих руководителей российского контура, гостевые лекции, участие в международной части дипломной защиты.</div>
+    </div>
+    <div class="row">
+      <div class="pname">Региональные туристические офисы (Алтай, Карелия, Калининград, Сочи)</div>
+      <div class="pstatus">Контакт</div>
+      <div class="pformat">Принимающая сторона региональных модулей 2-4 недели, заказчик территориальных брифов, площадка для дипломных проектов по развитию дестинации.</div>
+    </div>
+    <div class="row">
+      <div class="pname">Outline, Signal и продюсерские центры событийного направления</div>
+      <div class="pstatus">Контакт</div>
+      <div class="pformat">Кейсы организации фестивалей и событий, проектная работа в продюсерских командах, доступ к финансовой модели событийного продукта.</div>
+    </div>
+    <div class="row">
+      <div class="pname">Технологические поставщики (PMS, CRM, аналитика)</div>
+      <div class="pstatus">Контакт</div>
+      <div class="pformat">Образовательные лицензии на корпоративные версии систем управления, доступ к платформам аналитики гостевого поведения, участие технических специалистов в курсах цифрового стека.</div>
+    </div>
+  </div>
+
+  <div class="sub-h">D · внешние сигналы спроса <span class="sub-n">данные, которые не лежат на поверхности</span></div>
+
+  <p style="font-size:14.5px; line-height:1.6; color:var(--ink-soft); max-width:78ch; margin-bottom:32px">Сигналы собраны из открытых отраслевых источников и описывают спрос на управленческие кадры в гостеприимстве на горизонте до 2030 года. Каждый сигнал отвечает на конкретный инвесторский вопрос о существовании рынка под выпускников программы.</p>
+
+  <div class="demand-signals">
+    <div class="demand-signal">
+      <div class="ds-num">~400 <span>позиций</span></div>
+      <div class="ds-l">Прямой спрос до 2030</div>
+      <div class="ds-d">Оценка потребности в управленцах уровня директора объекта и руководителя направления, исходя из 80+ новых премиальных и upscale-гостиниц, вводимых в эксплуатацию в России до 2030 года, и 25-40 территориальных проектов курортного и культурно-туристического профиля.</div>
+    </div>
+    <div class="demand-signal">
+      <div class="ds-num">8-12 <span>млн ₽</span></div>
+      <div class="ds-l">Стоимость кадровой ошибки</div>
+      <div class="ds-d">Внутренний бюджет работодателя на выращивание управленца уровня директора объекта за 3-5 лет с учетом упущенной выручки, ошибок принятия решений и текучести. Стоимость обучения по программе - 4,4 млн ₽ за 4 года - режет инвестицию работодателя более чем вдвое.</div>
+    </div>
+    <div class="demand-signal">
+      <div class="ds-num">×2,4 <span>раза</span></div>
+      <div class="ds-l">Рост вакансий 250-500К ₽</div>
+      <div class="ds-d">Динамика открытых вакансий в гостеприимстве с зарплатной вилкой 250-500 тысяч рублей в месяц по данным открытых платформ за период 2023-2025. Категория соответствует стартовой позиции выпускника программы через 1-2 года после окончания.</div>
+    </div>
+  </div>
+
+  <div class="insight-card">
+    <div class="ic-tag">Инсайт · новый класс активов</div>
+    <h4>Российское гостеприимство 2027-2030 - это <em>не классическая отельная индустрия</em></h4>
+    <p>За 2024-2026 годы в России сформировался новый класс активов, который не подпадает ни под рамку международного сетевого отеля, ни под рамку советского туризма. Архыз, Шерегеш, Долина Лефкадия, образовательные кампусы Сириуса, реновация Алтая и Карелии, программы Минкульта по культурным городам - речь идет о 25-40 территориальных проектах, каждый из которых нанимает не директора отеля, а управленца с гибридным профилем: продукт, экономика, культура, среда.</p>
+    <p>Таких людей не готовят ни Les Roches, ни Glion - они работают на международные сети. Не готовят и российские профильные вузы - они остались в рамке туризма девяностых. Universal University располагает методическим, кадровым и партнерским ресурсом, чтобы стать первым поставщиком кадров под этот новый класс активов. Программа выпускает не «еще одну школу гостиничного менеджмента», а единственный профильный канал подготовки управленцев под формирующийся и подтвержденный спрос.</p>
+  </div>
+</section>
+
+<!-- ============ CHAPTER XVIII - FAQ ============ -->
+<section id="ch18" class="reveal faq-section">
+  <div class="section-header">
+    <div class="num">XVIII.</div>
+    <div>
+      <div class="chapter-mark" style="margin-bottom:14px">Глава восемнадцатая · Вопросы и возражения</div>
       <h2>Ответы на вопросы, которые <em>задают чаще всего</em></h2>
     </div>
   </div>
